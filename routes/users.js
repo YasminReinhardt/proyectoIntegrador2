@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const userControl= require ('../controllers/users.controllers')
+// creando las rutas con los controllers (explicaron en clase)
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get ('/user', userControl)
 
 module.exports = router;

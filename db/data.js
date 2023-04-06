@@ -86,7 +86,53 @@ const data= {
             nombreDeUsuario: '', 
             textoDelComentario: '',
             imagenPerfil: '',
-        }
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+        {
+            nombreDeUsuario: '', 
+            textoDelComentario: '',
+            imagenPerfil: '',
+        },
+
     ],
 
 }
