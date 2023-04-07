@@ -1,11 +1,53 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+	<!-- como no tiene los atributos html, me ocpo d traer los partials que me trae las etieuqtas de ejs y le pasamos la ruta donde esta el arhcivo -->
+
+<%- include ('./partials/head') %>
+<%- include('./partials/header') %>
+
+	<!-- Banner -->
+	<div class="banner">
+		<img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+	</div>
+	<!-- /Banner -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Novedades</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<div class="col-12 col-sm-6 col-lg-3">
+				<section class="product-box">
+          <% for (let i=0; i<productos.length; i++) {%>
+					<a href="product.html">
+						<figure class="product-box_image">
+							<img src= <%= productos [i].imagen %> alt="cafetera moulinex">
+						</figure>
+						<article class="product-box_data">
+							<h2><%= productos [i].nombreProducto %></h2>
+							<p><%= productos [i].descripcion %> </p>
+							<p><%= productos [i].fechaCarga %> </p>
+						</article>
+					</a>
+          <% } %>
+				</section>
+			</div>
+			
+	<!-- /Novedades -->
+	<!-- Más comentados -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Más comentados</h2>
+			</div>
+		
+						</article>
+					</a>
+				</section>
+			</div>
+		</div>
+	</div>
+  <%- include ('./partials/footer') %>
+
+	<!-- /Más comentados -->
+

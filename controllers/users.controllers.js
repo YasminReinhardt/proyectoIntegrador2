@@ -1,16 +1,16 @@
-const data= require ('../db/data')
+const data= require ('../data/data')
 const userControl ={ 
     login: function (req,res){
-        res.render ()
+        res.render ('login')
     },
     register: function (req,res){
-        res.render ()
+        res.render ('register')
     },
     profile: function (req,res){
-        res.render ()
+        res.render ('profile')
     },
     edit: function (req,res){
-        res.render ()
+        res.render ('edit-profile')
     },
 }
-module.exports= userControl
+module.exports= userControl;

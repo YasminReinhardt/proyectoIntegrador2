@@ -1,4 +1,4 @@
-const data= require ('../db/data')
+const data= require ('../data/data')
 
 const productosControl= {
     productos:function (req,res){

@@ -16,6 +16,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },
         {
@@ -23,6 +30,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },       
         {
@@ -30,12 +44,26 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },        {
             imagen: '',
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },       
         {
@@ -43,6 +71,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },       
         {
@@ -50,6 +85,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },        
         {
@@ -57,6 +99,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },       
         {
@@ -64,6 +113,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         } ,       
         {
@@ -71,6 +127,13 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },  
               {
@@ -78,62 +141,15 @@ const data= {
             nombreProducto: 'Pelota',
             descripcion: 'Pelota del Mundial',
             fechaCarga:'20/02/1994',
+            comentarios: [
+                {
+                    nombreDeUsuario: '', 
+                    textoDelComentario: '',
+                    imagenPerfil: '',   
+                }
+            ]
 
         },
     ],
-    comentarios: [
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-        {
-            nombreDeUsuario: '', 
-            textoDelComentario: '',
-            imagenPerfil: '',
-        },
-
-    ],
-
 }
 module.exports= data
