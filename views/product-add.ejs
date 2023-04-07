@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %> 
+<body>
+<%- include('./partials/headerLogueado') %> 
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Agregar productos</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">Foto del Producto</label>
+					<input type="file" name="foto de perfil">
+				</form>
+			</h2>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for=""> Nombre del Producto</label>
+					<input type="text" name="usuario">
+				</form>
+			</h2>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for=""> Descripcion del Producto </label>
+					<input type="text" name="usuario">
+				</form>
+			</h2>
+			<h2 class="col-12">
+				<form action="GET" action="/users/register">
+					<label for="">Fecha de Carga </label>
+					<input type="date" name="nacimiento">
+				</form>
+			</h2>
+			<h2 class="col-12">
+				<form action="/users/profile" >
+						<input type="submit" value="AÑADIR"></input>
+						<input type="reset" value="BORRAR"></input>
+				</form>
+			</h2>
+		</div>
+
+    </div>
+	<!-- footer -->
+	<%- include('./partials/footer') %> 
+	<!-- /footer -->
+</body>
+
+</html>
