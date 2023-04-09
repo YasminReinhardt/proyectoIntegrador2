@@ -1,4 +1,5 @@
 const data= require ('../data/data')
+
 const userControl ={ 
     login: function (req,res){
         res.render ('login')

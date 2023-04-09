@@ -5,7 +5,7 @@ const indexControl= {
         res.render ('index', {
             productos: data.productos,
             //ahora podemos hacer un for en el index.ejs
-            usuarioLogeado: true
+            usuarioLogueado: true // creo que va data.usuario 
         })
 
 
