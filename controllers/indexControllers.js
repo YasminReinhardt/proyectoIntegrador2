@@ -1,9 +1,9 @@
-const data= require ('../data/data')
+const db = require ('../data/data')
 
 const indexControl= {
     index: function (req,res){
         res.render ('index', {
-            productos: data.productos,
+            productos: db.productos,
             //ahora podemos hacer un for en el index.ejs
             usuarioLogueado: true // creo que va data.usuario 
         })
