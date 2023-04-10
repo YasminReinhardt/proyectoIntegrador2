@@ -6,7 +6,7 @@ const data= {
             usuario: 'Reni', 
             fechaNacimiento: '20/03/1999', 
             documento: '45580174', 
-            fotoPerfil: '', 
+            fotoPerfil: '/images/imagenPerfil.png', 
 
         }
     ],
@@ -18,8 +18,8 @@ const data= {
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
-                    nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    nombreDeUsuario: 'Lucia Cupito', 
+                    textoDelComentario: 'Muy linda camiseta',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -33,7 +33,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Excelente calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -46,7 +46,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Muy comodos los botines',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -59,7 +59,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Buen precio y calidad ',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -73,7 +73,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Genial la tela',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -86,7 +86,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Muy linda camiseta',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -99,7 +99,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Excelente calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -113,7 +113,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Muy comodos los botines',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -127,7 +127,7 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
-                    textoDelComentario: '',
+                    textoDelComentario: 'Buen precio y calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -141,7 +141,7 @@ const data= {
                 comentarios: [
                     {
                         nombreDeUsuario: '', 
-                        textoDelComentario: '',
+                        textoDelComentario: 'Genial la tela',
                         imagenPerfil: '/images/imagenPerfil.png',   
                     }
                 ]
