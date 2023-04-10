@@ -6,7 +6,7 @@
 
 	<!-- Banner -->
 	<div class="banner">
-		<img src="/images/img-home-banner" alt="Banner de ofertas">
+		<img src="/images/" alt="">
 	</div>
 	<!-- /Banner -->
 
@@ -20,9 +20,9 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
           <% for (let i=0; i<productos.length; i++) {%>
-					<a href="/images/products/">
+					<a href="/productos/detail">
 						<figure class="product-box_image">
-							<img src= <%= productos [i].imagen %> alt="cafetera moulinex">
+							<img src= <%= productos[i].imagen %> alt="">
 						</figure>
 						<article class="product-box_data">
 							<h2><%= productos [i].nombreProducto %></h2>
@@ -33,6 +33,8 @@
           <% } %>
 				</section>
 			</div>
+		</div>
+	</div>
 			
 	<!-- /Novedades -->
 	<!-- Más comentados -->

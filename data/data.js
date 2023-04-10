@@ -1,9 +1,9 @@
 const data= {
     usuario: [ //lo que te pide al ingresar (inventado)
         {
-            nombre: 'renata', 
+            nombre: 'Renata', 
             contrasena: '2003', 
-            usuario: 'reni', 
+            usuario: 'Reni', 
             fechaNacimiento: '20/03/1999', 
             documento: '45580174', 
             fotoPerfil: '', 
@@ -12,137 +12,137 @@ const data= {
     ],
     productos: [
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/remera.jpg',
+            nombreProducto: 'Camiseta',
+            descripcion: 'Camiseta de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
         },
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/pelota.jpg',
+            nombreProducto: 'Pelota',
+            descripcion: 'Pelota de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
         },       
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/botines.jpg',
+            nombreProducto: 'Botines',
+            descripcion: 'Botines de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
         },        {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/medias.jpg',
+            nombreProducto: 'Medias',
+            descripcion: 'Medias de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
         },       
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/shorts.jpg',
+            nombreProducto: 'Short',
+            descripcion: 'Short de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
         },       
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/remera.jpg',
+            nombreProducto: 'Camiseta',
+            descripcion: 'Camiseta de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
         },        
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/pelota.jpg',
+            nombreProducto: 'Pelota',
+            descripcion: 'Pelota de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
         },       
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/botines.jpg',
+            nombreProducto: 'Botines',
+            descripcion: 'Botines de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
         } ,       
         {
-            imagen: '',
-            nombreProducto: 'Velas',
-            descripcion: 'Vela de vainilla',
+            imagen: '/images/products/medias.jpg',
+            nombreProducto: 'Medias',
+            descripcion: 'Medias de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: '',
-                    imagenPerfil: '',   
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
         },  
               {
-                imagen: '',
-                nombreProducto: 'Velas',
-                descripcion: 'Vela de vainilla',
+                imagen: '/images/products/shorts.jpg',
+                nombreProducto: 'Short',
+                descripcion: 'Short de la Seleccion',
                 fechaCarga:'20/02/1994',
                 comentarios: [
                     {
                         nombreDeUsuario: '', 
                         textoDelComentario: '',
-                        imagenPerfil: '',   
+                        imagenPerfil: '/images/imagenPerfil.png',   
                     }
                 ]
         },

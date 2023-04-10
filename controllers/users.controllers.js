@@ -1,4 +1,4 @@
-const data= require ('../data/data')
+const data = require('../data/data')
 
 const userControl ={ 
     login: function (req,res){
@@ -15,13 +15,16 @@ const userControl ={
     profile: function (req,res){
         res.render ('profile'
         , {
-            usuarioLogueado: true
+            usuarioLogueado: true,
+            productos : data.productos,
+            usuario : data.usuario
         })
     },
     edit: function (req,res){
         res.render ('edit-profile', {
+            productos : data.productos,
             usuarioLogueado: true
         })
     },
 }
-module.exports= userControl
+module.exports = userControl
