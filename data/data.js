@@ -13,8 +13,8 @@ const data= {
     productos: [
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -27,8 +27,8 @@ const data= {
         },
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -37,12 +37,11 @@ const data= {
                     imagenPerfil: '',   
                 }
             ]
-
         },       
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -54,8 +53,8 @@ const data= {
 
         },        {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -68,8 +67,8 @@ const data= {
         },       
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -78,12 +77,11 @@ const data= {
                     imagenPerfil: '',   
                 }
             ]
-
         },       
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -92,12 +90,11 @@ const data= {
                     imagenPerfil: '',   
                 }
             ]
-
         },        
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -110,8 +107,8 @@ const data= {
         },       
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -124,8 +121,8 @@ const data= {
         } ,       
         {
             imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
+            nombreProducto: 'Velas',
+            descripcion: 'Vela de vainilla',
             fechaCarga:'20/02/1994',
             comentarios: [
                 {
@@ -137,18 +134,17 @@ const data= {
 
         },  
               {
-            imagen: '',
-            nombreProducto: 'Pelota',
-            descripcion: 'Pelota del Mundial',
-            fechaCarga:'20/02/1994',
-            comentarios: [
-                {
-                    nombreDeUsuario: '', 
-                    textoDelComentario: '',
-                    imagenPerfil: '',   
-                }
-            ]
-
+                imagen: '',
+                nombreProducto: 'Velas',
+                descripcion: 'Vela de vainilla',
+                fechaCarga:'20/02/1994',
+                comentarios: [
+                    {
+                        nombreDeUsuario: '', 
+                        textoDelComentario: '',
+                        imagenPerfil: '',   
+                    }
+                ]
         },
     ],
 }
