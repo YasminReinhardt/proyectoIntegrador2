@@ -1,21 +1,37 @@
 const data = require('../data/data')
-
-const productosControl = {
-    index: function(req, res){
-        res.render("product", {
-            productos : data.productos,
-            usuarioLogueado: true, //true o false
-            usuario : data.usuario,
-        })
+const productosControl= {
+    productos:function (req,res){
+       res.render ('product' , {
+            usuarioLogueado: true
+       })
     },
-    detail: function(req, res){
-        res.render("product-add" ,{
-        productos : data.productos,
-        usuarioLogueado: true, //true o false
-        usuario : data.usuario,
+    productosAdd:function (req,res){
+        res.render ('product-add', {
+           usuarioLogueado: true
+       })
+   },
+    searchResults:function (req,res){
+        res.render ('search-results', {
+           usuarioLogueado: true
         })
     }
 }
+///const productosControl = {
+   // index: function(req, res){
+     //   res.render("product", {
+       //     productos : data.productos,
+         //   usuarioLogueado: true, //true o false
+           // usuario : data.usuario,
+        //})
+    //},
+    //detail: function(req, res){
+      //  res.render("product-add" ,{
+        //productos : data.productos,
+        //usuarioLogueado: true, //true o false
+        //usuario : data.usuario,
+        //})
+   // }
+
 
 module.exports= productosControl
 
@@ -35,4 +51,6 @@ module.exports= productosControl
         //res.render ('search-results', {
       //      usuarioLogueado: true
         //})
-    //}//
+    //}
+
+    
