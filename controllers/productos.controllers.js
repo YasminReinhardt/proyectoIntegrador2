@@ -9,7 +9,8 @@ const productosControl= {
     productosAdd:function (req,res){
         res.render ('product-add', {
            usuarioLogueado: true,
-           usuarios : data.usuario
+           usuarios : data.usuario,
+           productos: data.productos,
        })
    },
     searchResults:function (req,res){

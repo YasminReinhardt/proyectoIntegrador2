@@ -4,6 +4,7 @@ const data= {
             nombre: 'Renata', 
             contrasena: '2003', 
             usuario: 'Reni', 
+            email: 'renatabittoh@gmail.com',
             fechaNacimiento: '20/03/1999', 
             documento: '45580174', 
             fotoPerfil: '/images/imagenPerfil.png', 
