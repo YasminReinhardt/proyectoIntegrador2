@@ -7,7 +7,7 @@ const productosControl= require ('../controllers/productos.controllers')
 //router.get("/detail", productosControl.detail)
 
 
-router.get ('/', productosControl.productos)
+router.get ('/detail', productosControl.productos)
 router.get ('/productosAdd', productosControl.productosAdd )
 router.get ('/searchResults', productosControl.searchResults)
 

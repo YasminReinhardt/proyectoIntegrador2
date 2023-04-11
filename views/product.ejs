@@ -14,13 +14,14 @@
 				<div class="d-flex align-items-center">
 					<h2 class="products-title"></h2>
 					<p class="product-detail-description">
-						<a href="/productos">Editar</a>
+						<a href="/productos/productosAdd">Agregar un producto</a>
 					</p>
 				</div>
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
-							<img src="" alt="" class="product-detail-img">
+							<p><%= productos[0].nombreProducto%></p>
+							<img src="<%= productos[0].imagen%>" alt="" class="product-detail-img">
 							<p class="product-detail-description">
 								
 							</p>
@@ -31,15 +32,15 @@
 							<div class="col-12 col-lg-4">
 							   <section class="comments">
 								   <article>
-									   <img src="<%= productos.comentarios[i].imagenPerfil %> " alt="">
+									   <img src="<%= productos[i].comentarios.imagenPerfil %> " alt="">
 									   <div class="data">
 										   <p class="user">
 											   <strong> 
 												   <a href="/users/profile">
-													   <%=productos.comentarios[i].nombreDeUsuario %>
+													   <%=productos[i].comentarios.nombreDeUsuario %>
 												   </a> 
 											   </strong>
-											   <%= productos.comentarios[i].textoDelComentario %>
+											   <%= productos[i].comentarios.textoDelComentario %>
 										   </p>
 									   </div>
 									</article>

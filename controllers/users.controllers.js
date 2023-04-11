@@ -17,13 +17,14 @@ const userControl ={
         , {
             usuarioLogueado: true,
             productos : data.productos,
-            usuario : data.usuario
+            usuarios : data.usuario
         })
     },
     edit: function (req,res){
         res.render ('edit-profile', {
             productos : data.productos,
-            usuarioLogueado: true
+            usuarioLogueado: true,
+            usuarios : data.usuario,
         })
     },
 }
