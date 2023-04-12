@@ -2,20 +2,24 @@ const data = require('../data/data')
 const productosControl= {
     productos:function (req,res){
        res.render ('product' , {
-            usuarioLogueado: true,
+            usuarioLogueado: false,
             productos: data.productos,
+            usuario:data.usuario
        })
     },
     productosAdd:function (req,res){
         res.render ('product-add', {
            usuarioLogueado: true,
-           usuarios : data.usuario,
+           usuario : data.usuario,
            productos: data.productos,
        })
    },
     searchResults:function (req,res){
         res.render ('search-results', {
-           usuarioLogueado: true
+           usuarioLogueado: false, 
+           productos: data.productos,
+           usuario:data.usuario
+
         })
     }
 }

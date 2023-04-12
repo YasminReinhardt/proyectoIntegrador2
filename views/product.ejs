@@ -5,7 +5,7 @@
 
 	<body>
 		<!-- Header -->
-		  <%- include('./partials/headerDeslogueado') %>
+		  <%- include('./partials/header.ejs') %>
 			<!-- /Header -->
  
 			<!-- product detail -->
@@ -27,34 +27,40 @@
 							</p>
 							
 						</article>
-						<% for( let i=0; i < 6; i++ ) { %>
-
+						<% for( let i=0; i < 1; i++ ) { %>
 							<div class="col-12 col-lg-4">
+
 							   <section class="comments">
+								<% for( let index = 0; index <  productos[i].comentarios.length; index++ ) { %>
+
 								   <article>
-									   <img src="<%= productos[i].comentarios.imagenPerfil %> " alt="">
+									   <img src="<%= productos[i].comentarios[index].imagenPerfil %> " alt="">
 									   <div class="data">
 										   <p class="user">
 											   <strong> 
 												   <a href="/users/profile">
-													   <%=productos[i].comentarios.nombreDeUsuario %>
+													   <%=productos[i].comentarios[index].nombreDeUsuario %>
 												   </a> 
 											   </strong>
-											   <%= productos[i].comentarios.textoDelComentario %>
+												<p><%= productos[i].comentarios[index].textoDelComentario%> </p>
+
 										   </p>
 									   </div>
 									</article>
+									<% } %>
+			
 								</section>
-							</div>		
-						<% } %>
-						        <section>
+								<section>
 									
-									<form class="form" action="" method="POST">
+									<form class="form" action="/productos/detail" method="get">
 										<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 										<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 									</form>
 
 								</section>
+							</div>		
+						<% } %>
+
 								
 							
 							 </div>

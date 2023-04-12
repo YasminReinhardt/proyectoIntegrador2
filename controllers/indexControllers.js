@@ -6,7 +6,7 @@ const indexControl= {
             productos: data.productos,
             //ahora podemos hacer un for en el index.ejs
             usuarioLogueado: false, // creo que va data.usuario 
-            usuarios : data.usuario
+            usuarios : data.usuario,
         }
         )
     }

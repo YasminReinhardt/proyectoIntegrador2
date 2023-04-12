@@ -22,6 +22,21 @@ const data= {
                     nombreDeUsuario: 'Lucia Cupito', 
                     textoDelComentario: 'Muy linda camiseta',
                     imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
@@ -32,11 +47,28 @@ const data= {
             descripcion: 'Pelota de la Seleccion',
             fechaCarga:'20/02/1994',
             comentarios: [
+
                 {
-                    nombreDeUsuario: '', 
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
                     textoDelComentario: 'Excelente calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
+
             ]
         },       
         {
@@ -48,6 +80,22 @@ const data= {
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: 'Muy comodos los botines',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -61,6 +109,21 @@ const data= {
                 {
                     nombreDeUsuario: '', 
                     textoDelComentario: 'Buen precio y calidad ',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
@@ -76,6 +139,21 @@ const data= {
                     nombreDeUsuario: '', 
                     textoDelComentario: 'Genial la tela',
                     imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
         },       
@@ -89,6 +167,21 @@ const data= {
                     nombreDeUsuario: '', 
                     textoDelComentario: 'Muy linda camiseta',
                     imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
         },        
@@ -100,6 +193,21 @@ const data= {
             comentarios: [
                 {
                     nombreDeUsuario: '', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
                     textoDelComentario: 'Excelente calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
                 }
@@ -116,6 +224,21 @@ const data= {
                     nombreDeUsuario: '', 
                     textoDelComentario: 'Muy comodos los botines',
                     imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
@@ -130,6 +253,21 @@ const data= {
                     nombreDeUsuario: '', 
                     textoDelComentario: 'Buen precio y calidad',
                     imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
+                },
+                {
+                    nombreDeUsuario: 'Yasmin Reinhardt', 
+                    textoDelComentario: 'Excelente calidad',
+                    imagenPerfil: '/images/imagenPerfil.png',   
                 }
             ]
 
@@ -143,6 +281,21 @@ const data= {
                     {
                         nombreDeUsuario: '', 
                         textoDelComentario: 'Genial la tela',
+                        imagenPerfil: '/images/imagenPerfil.png',   
+                    },
+                    {
+                        nombreDeUsuario: 'Yasmin Reinhardt', 
+                        textoDelComentario: 'Excelente calidad',
+                        imagenPerfil: '/images/imagenPerfil.png',   
+                    },
+                    {
+                        nombreDeUsuario: 'Yasmin Reinhardt', 
+                        textoDelComentario: 'Excelente calidad',
+                        imagenPerfil: '/images/imagenPerfil.png',   
+                    },
+                    {
+                        nombreDeUsuario: 'Yasmin Reinhardt', 
+                        textoDelComentario: 'Excelente calidad',
                         imagenPerfil: '/images/imagenPerfil.png',   
                     }
                 ]
