@@ -80,6 +80,7 @@ hr {
   font-size: 1.5em;
   margin-top: 20px;
   text-align: center;
+  color: white;
 }
 
 .search-form {
@@ -125,8 +126,17 @@ hr {
 .main-navbar {
   margin-top: 20px;
   display: none;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
 }
 
+.left-navbar:hover{
+  color: black;
+}
+.left:hover{
+  color: black;
+}
 .left-navbar,
 .right-navbar {
   font-size: 1.5em;
@@ -140,14 +150,14 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  color: blue;
 }
 
 .left-navbar a,
 .right-navbar a {
   display: block;
   padding: 5px 0;
-  border-bottom: solid 1px var(--gray);
+  border-bottom: solid 1px var(--light-gray);
 }
 
 
@@ -173,6 +183,8 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: var(--gray);
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
 }
 
 .product-box {
