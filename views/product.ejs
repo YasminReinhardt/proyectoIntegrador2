@@ -12,7 +12,7 @@
 
 			<div class="container products-wrapper">
 				<div class="d-flex align-items-center">
-					<h2 class="products-title"></h2>
+					<p class="products-title"><%= productos[0].nombreProducto%></p>
 					<p class="product-detail-description">
 						<a href="/productos/productosAdd">Agregar un producto</a>
 					</p>
@@ -20,11 +20,9 @@
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
-							<p><%= productos[0].nombreProducto%></p>
 							<img src="<%= productos[0].imagen%>" alt="" class="product-detail-img">
-							<p class="product-detail-description">
-								
-							</p>
+							<p class="product-detail-description"><%= productos[0].descripcion%></p>
+
 							
 						</article>
 						<% for( let i=0; i < 1; i++ ) { %>

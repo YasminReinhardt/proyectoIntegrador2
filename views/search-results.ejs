@@ -12,15 +12,59 @@
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-			<p> <%= productos[1].nombreProducto %></p>
-			<a href="/productos/detail">
-				<img src="<%= productos[1].imagen %>" alt="">
-				<p><%= productos[1].descripcion %></p>
+		</div>
+		<div class="container products-wrapper">
+			<div class="d-flex align-items-center">
+				<h2 class="products-title"><%= productos[1].nombreProducto %></h2>
+		</div>
+		<div class="product-detail">		
+			<div class="row">
+				<article class="col-12 col-lg-8 product-detail-info">
+				<a href="/productos/detail">
+					<img src="<%= productos[1].imagen %>" alt="" class="product-box_image">
+					<p class="product-detail-description"><%= productos[1].descripcion %></p>
 			</a>
+		</article>
+		<% for( let i=0; i < 1; i++ ) { %>
+			<div class="col-12 col-lg-4">
+	
+			   <section class="comments">
+				<% for( let index = 0; index < productos[i].comentarios.length; index++ ) { %>
+	
+				   <article>
+					   <img src="<%= productos[i].comentarios[index].imagenPerfil %> " alt="">
+					   <div class="data">
+						   <p class="user">
+							   <strong> 
+								   <a href="/users/profile">
+									   <%=productos[i].comentarios[index].nombreDeUsuario %>
+								   </a> 
+							   </strong>
+								<p><%= productos[i].comentarios[index].textoDelComentario%> </p>
+	
+						   </p>
+					   </div>
+					</article>
+					<section>
+						<% } %>
+			
+						<form class="form" action="/productos/detail" method="get">
+							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
 
-			<h2 class="col-12"> 
+					</section>
+				</div>	
+					<% } %>
+	
+				</section>
+		</div>
+	</div>
 
-			</h2>
+</div>
+</div>
+
+
 
 
 	<!-- footer -->

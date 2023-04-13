@@ -13,35 +13,22 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12">
-				<form action="GET" action="/productos/productosAdd">
-					<label for="">Foto</label>
-					<input type="file" name="foto de perfil">
-				</form>
+				<form action="/users/profile"  method="GET">
+					<div><label for="">Foto</label>
+						<input type="file" name="foto de perfil"> </div>
+					<div><label for="">Nombre del producto </label>
+						<input type="text" name="producto"> </div>
+
+					<div><label for="">Fecha de Carga </label>
+						<input type="date" name="fecha de carga"></div>
+					<div><label for=""> Descrpicion del producto </label>
+						<input type="text" name="descrpicion"></div>
+					</form>
+					<form action="/users/profile"  method="GET">
+					<input type="submit" value="AÑADIR PRODUCTO"></input>
+					</form>
 			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/productos/productosAdd">
-					<label for="">Nombre del producto </label>
-					<input type="text" name="producto">
-				</form>
-			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/productos/productosAdd">
-					<label for=""> Descrpicion del producto </label>
-					<input type="text" name="descrpicion">
-				</form>
-			</h2>
-			<h2 class="col-12">
-				<form action="GET" action="/productos/productosAdd">
-					<label for="">Fecha de Carga </label>
-					<input type="date" name="fecha de carga">
-				</form>
-			</h2>
-			<h2 class="col-12">
-				<form action="/users/profile" >
-						<input type="submit" value="AÑADIR"></input>
-						<input type="reset" value="BORRAR"></input>
-				</form>
-			</h2>
+
 		</div>
 
     </div>
