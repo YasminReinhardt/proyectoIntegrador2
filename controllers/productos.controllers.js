@@ -1,4 +1,5 @@
 const data = require('../data/data')
+const db= require ('../database/models/index')
 const productosControl= {
     productos:function (req,res){
        res.render ('product' , {

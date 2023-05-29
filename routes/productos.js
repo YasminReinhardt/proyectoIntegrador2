@@ -11,4 +11,5 @@ router.get ('/detail', productosControl.productos)
 router.get ('/productosAdd', productosControl.productosAdd )
 router.get ('/searchResults', productosControl.searchResults)
 
+
 module.exports = router;

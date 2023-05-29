@@ -1,4 +1,5 @@
 const data = require('../data/data')
+const db= require ('../database/models/index')
 
 const userControl ={ 
     login: function (req,res){
