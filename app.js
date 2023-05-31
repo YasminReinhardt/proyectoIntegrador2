@@ -3,7 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+//cookie const 
+var cookieParser = require('cookie-parser');
+//session const 
+const session= require ('express-session')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let productosRouter= require ('./routes/productos') //conectamos la ruta de productos
@@ -29,6 +32,26 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+//session use
+app.use (session({
+  secret: "Nuestro mensaje secreto",
+  resave: false,
+  saveUninitialized: true }))
+
+  //cookie use
+  //app.use(function(req, res, next){
+    //console.log(req.cookies.rememberMe)
+    
+  //  if(req.session.user !== undefined){
+    //  res.locals.usuarioLogueado = true
+      //res.locals.user = req.session.user
+ //   } else {
+   //   res.locals.usuarioLogueado = false
+ //   }
+    
+ //   return next()
+ // })
+ 
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development

@@ -28,6 +28,12 @@ module.exports= function(sequelize, dataTypes) {
             foreignKey: 'usuario_id'
         })
     }
+ //   Productos.associate= function (models){
+  //      Productos.hasMany(models.Comentarios, {
+  //          as: "comentarios",
+ //           foreignKey: "productos_id",
+  //      })
+  //  }
 
     return Productos
 }

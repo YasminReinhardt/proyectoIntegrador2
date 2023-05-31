@@ -4,6 +4,7 @@ const userControl= require ('../controllers/users.controllers')
 // creando las rutas con los controllers (explicaron en clase)
 
 router.get ('/login', userControl.login)
+//router.post('/login',userControl.checkUser)
 router.get ('/register', userControl.register)
 router.get ('/profile', userControl.profile)
 router.get ('/edit-profile', userControl.edit)
