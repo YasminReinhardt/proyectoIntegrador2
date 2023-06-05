@@ -15,17 +15,17 @@ module.exports= function(sequelize, dataTypes) {
         timestap: true
     }
     const Comentarios= sequelize.define(alias,columnas,config)
-//    Comentarios.associate= function (models){
-  //      Comentarios.belongsTo(models.Productos, {
- //           as: "productos",
-  //          foreignKey: "productos_id",
- //       })
- //   }
- //   Comentarios.associate= function (models){
- //       Comentarios.belongsTo(models.Usuarios, {
- //           as: "usuarios",
-  //          foreignKey: "usuario_id",
- //       })
- //   }
+    Comentarios.associate= function (models){
+        Comentarios.belongsTo(models.Productos, {
+            as: "productos",
+            foreignKey: "productos_id",
+        })
+    }
+    Comentarios.associate= function (models){
+        Comentarios.belongsTo(models.Usuarios, {
+            as: "usuarios",
+          foreignKey: "usuario_id",
+        })
+    }
     return Comentarios
 }

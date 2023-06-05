@@ -3,8 +3,16 @@ const db= require ('../database/models/index')
 
 const indexControl= {
     index: function (req,res){
-        db.Usuario.findAll()
+        db.Producto.findAll({
+            raw: true,
+            nest: true,
+            include: [
+                {association: 'usuarios'},
+                {association: 'comentarios'}
+            ]
+        })
         .then(function(data){
+
             console.log(data)
         })
         .catch(function(err){console.log(err)})

@@ -14,23 +14,80 @@ const userControl ={
         )
     },
     profile: function (req,res){
-        res.render ('profile'
-        , {
+        let id= req.params.id
+        db.Usuario.findByPk(id)
+        .then (function(user){
+            res.render ('profile', {
             usuarioLogueado: true,
             productos : data.productos,
             usuario : data.usuario
         })
-    },
-    edit: function (req,res){
-        res.render ('edit-profile', {
-            productos : data.productos,
-            usuarioLogueado: true,
-            usuario : data.usuario,
+        })
+        .catch(function(err){
+            console.log(err)
         })
     },
+    edit: function (req,res){
+        let id= req.params.id
+        db.Usuario.findByPk(id)
+        .then (function(user){
+            res.render ('edit-profile', {
+                productos : data.productos,
+                usuarioLogueado: true,
+                usuario : data.usuario,
+        })
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+
+    },
+    create: function(req,res){
+        let {usuario,email,password,photo,birthdate,dni}=req.body
+        //
+        db.Usuario.create({
+            usuario: req.body.usuario,
+            email: req.body.email,
+            password: req.body.password,
+            photo: req.body.photo,
+            birthdate: req.body.birthdate,
+            dni:req.body.dni,
+        })
+        .then (function(data){
+            res.redirect ("/users/profile")
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    }, 
+    update: function (req,res){
+        let id= req.params.id
+        let {usuario,email}= req.body 
+        db.Usuario.update({
+            usuario: usuario, 
+            email: email
+        }, {
+            where:{
+                id:id
+            }
+        })
+        .then (function(data){
+            res.redirect ('/users/profile' + id)
+        })        
+        .catch(function(err){
+            console.log(err)
+        })
+    },
+    
+    
+
+
+
+
+
    // checkUser: function(req, res){
      //   let {email, password, rememberMe} = req.body
-   //     db.Usuarios.findOne({
+   //     db.Usuario.findOne({
     //        where:{
      //           email
     //        },

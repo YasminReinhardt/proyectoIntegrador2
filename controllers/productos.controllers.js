@@ -2,6 +2,13 @@ const data = require('../data/data')
 const db= require ('../database/models/index')
 const productosControl= {
     productos:function (req,res){
+        db.Comentario.findAll({
+            raw: true,
+            nest: true,
+            include: [
+                {association: 'productos'},
+            ]
+        })
        res.render ('product' , {
             usuarioLogueado: false,
             productos: data.productos,
