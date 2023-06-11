@@ -7,9 +7,9 @@ const productosControl= require ('../controllers/productos.controllers')
 //router.get("/detail", productosControl.detail)
 
 
-router.get ('/detail', productosControl.productos)
+router.get ('/detail:id', productosControl.productos)
 router.get ('/productosAdd', productosControl.productosAdd )
+router.post ('/productosAdd/create', productosControl.create)
 router.get ('/searchResults', productosControl.searchResults)
-
 
 module.exports = router;

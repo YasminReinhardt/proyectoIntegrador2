@@ -14,6 +14,20 @@ const productosControl= {
             productos: data.productos,
             usuario:data.usuario
        })
+       //cuando toca detalle de producto te lleve al corresponiente 
+       let id= req.params.id
+       db.Producto.findByPk(id, {
+           raw:true
+       })
+       .then(function(data){
+          res.render('product', {
+            usuarioLogueado: false,
+            //falta cambiar la vista 
+          })
+       })
+       .catch(function(err){
+           console.log(err)
+       })
     },
     productosAdd:function (req,res){
         res.render ('product-add', {
@@ -29,7 +43,19 @@ const productosControl= {
            usuario:data.usuario
 
         })
-    }
+    }, 
+    create: function(req,res){
+        db.Producto.create({
+            nombre: req.body.nombre, 
+            descrpicion:req.body.descrpicion,
+        })
+        .then(function(data){
+            res.redirect('/')
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    },
 }
 ///const productosControl = {
    // index: function(req, res){
