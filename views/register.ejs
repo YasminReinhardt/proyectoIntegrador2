@@ -22,6 +22,18 @@
 
 			</form>
 			</h2>
+			<!-- METODO POST -->
+			<h2 class="col-12"> 			
+				<form action="/users/register" method="POST">
+					<input name="usuario" type="text" placeholder="Digita tu nombre">
+					<input name="email" type="text" placeholder="Digita tu email">
+					<input type="date" name="birthdate" placeholder="Fecha nacimiento">
+					<input type="number" name="dni" placeholder="DNI">
+					<input type="text" name="photo" placeholder="Foto de perfil">
+					<input name="password" type="text" placeholder="Digita tu contraseña">
+					<input type="submit" value="Registrame">
+				</form>
+			</h2>	
             <p>
                 Ya tienes cuenta? 
                 <a href="/users/login"> Inicia sesion</a>

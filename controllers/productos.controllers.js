@@ -1,5 +1,7 @@
 const data = require('../data/data')
 const db= require ('../database/models/index')
+const bcrypt = require('bcryptjs')
+let op = db.Sequelize.Op
 const productosControl= {
     productos:function (req,res){
         db.Comentario.findAll({
@@ -9,11 +11,15 @@ const productosControl= {
                 {association: 'productos'},
             ]
         })
-       res.render ('product' , {
-            usuarioLogueado: false,
-            productos: data.productos,
-            usuario:data.usuario
-       })
+        .then(function(data){
+            res.render('product', {
+              usuarioLogueado: false,
+              producto:data,
+            })
+         })
+         .catch(function(err){
+             console.log(err)
+         })
        //cuando toca detalle de producto te lleve al corresponiente 
        let id= req.params.id
        db.Producto.findByPk(id, {
@@ -22,7 +28,7 @@ const productosControl= {
        .then(function(data){
           res.render('product', {
             usuarioLogueado: false,
-            //falta cambiar la vista 
+            producto:data,
           })
        })
        .catch(function(err){
@@ -37,14 +43,38 @@ const productosControl= {
        })
    },
     searchResults:function (req,res){
-        res.render ('search-results', {
-           usuarioLogueado: false, 
-           productos: data.productos,
-           usuario:data.usuario
-
+        let busquedaUsuario= req.query.busqueda
+        db.Producto.findAll({
+            where:{
+                nombre: {
+                    [op.like]: '%${busquedaUsuario}%'
+                }
+            }, 
+            raw:true,
         })
-    }, 
+        .then(function(data){
+            let encontroResultados
+            
+            if(data.length > 0){
+                encontroResultados = true
+            } else {
+                encontroResultados = false
+            }
+            res.render ('search-results', {
+                usuarioLogueado: false, 
+                busqueda: busquedaUsuario,
+                resultados: data,
+                encontroResultados: encontroResultados
+            }
+            )
+            })
+            .catch(function(err){
+                console.log(err)
+            })
+
+        },
     create: function(req,res){
+
         db.Producto.create({
             nombre: req.body.nombre, 
             descrpicion:req.body.descrpicion,

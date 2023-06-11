@@ -9,21 +9,25 @@ const indexControl= {
             include: [
                 {association: 'usuarios'},
                 {association: 'comentarios'}
-            ]
+            ],
+            order:[
+                ['created_at', 'DESC']
+            ], 
+            limit:10, 
         })
         .then(function(data){
-
-            console.log(data)
+            res.render ('index', {
+                productos: data,
+                usuarioLogueado: false, // creo que va data.usuario 
+            }
+            )
         })
         .catch(function(err){console.log(err)})
 
-        res.render ('index', {
-            productos: data.productos,
-            //ahora podemos hacer un for en el index.ejs
-            usuarioLogueado: false, // creo que va data.usuario 
-            usuarios : data.usuario,
-        }
-        )
+
+    },
+    logout: function(req,res){
+        
     }
 }
 module.exports= indexControl

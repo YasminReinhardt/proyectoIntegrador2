@@ -38,19 +38,16 @@ app.use (session({
   resave: false,
   saveUninitialized: true }))
 
-  //cookie use
-  //app.use(function(req, res, next){
-    //console.log(req.cookies.rememberMe)
-    
-  //  if(req.session.user !== undefined){
-    //  res.locals.usuarioLogueado = true
-      //res.locals.user = req.session.user
- //   } else {
-   //   res.locals.usuarioLogueado = false
- //   }
-    
- //   return next()
- // })
+app.use(function(req, res, next){ 
+ if(req.session.user !== undefined){
+      res.locals.usuarioLogueado = true,
+      res.locals.user = req.session.user
+
+   } else {
+      res.locals.usuarioLogueado = false
+    }
+       return next()
+ })
  
 // error handler
 app.use(function(err, req, res, next) {

@@ -1,6 +1,6 @@
 const data = require('../data/data')
 const db= require ('../database/models/index')
-
+const bcrypt = require('bcryptjs')
 const userControl ={ 
     login: function (req,res){
         res.render ('login', {
@@ -14,15 +14,15 @@ const userControl ={
         )
     },
     profile: function (req,res){
-        let id= req.params.id
+        let id= req.session.user.id
         db.Usuario.findByPk(id)
         .then (function(user){
             res.render ('profile', {
             usuarioLogueado: true,
-            productos : data.productos,
-            usuario : data.usuario
+            usuario : user
         })
         })
+        //Hay un prpbllme con la ruta
         .catch(function(err){
             console.log(err)
         })
@@ -32,9 +32,8 @@ const userControl ={
         db.Usuario.findByPk(id)
         .then (function(user){
             res.render ('edit-profile', {
-                productos : data.productos,
                 usuarioLogueado: true,
-                usuario : data.usuario,
+                usuario : user,
         })
         })
         .catch(function(err){
@@ -44,14 +43,14 @@ const userControl ={
     },
     create: function(req,res){
         let {usuario,email,password,photo,birthdate,dni}=req.body
-        //
+        let passEncriptada = bcrypt.hashSync(password, 12)
         db.Usuario.create({
-            usuario: req.body.usuario,
-            email: req.body.email,
-            password: req.body.password,
-            photo: req.body.photo,
-            birthdate: req.body.birthdate,
-            dni:req.body.dni,
+            usuario: usuario,
+            email: email,
+            password: passEncriptada,
+            photo: photo,
+            birthdate:birthdate,
+            dni:dni,
         })
         .then (function(data){
             res.redirect ("/users/profile")
@@ -72,60 +71,66 @@ const userControl ={
             }
         })
         .then (function(data){
-            res.redirect ('/users/profile' + id)
+            res.redirect ('/users/profile/' + id)
         })        
         .catch(function(err){
             console.log(err)
         })
     },
     
-    
+    checkUser: function(req, res){
+    let {email, password, rememberMe} = req.body
+        db.Usuario.findOne({
+            where:{
+                email: email
+            },
+            raw:true
+        })
+        .then(function(user){
+         let comparacionPassword = bcrypt.compareSync(password, user.password)
+            if(comparacionPassword){
+                req.session.user={
+                    id:user.id, 
+                    usuario: user.usuario, 
+                    email: user.email,
+                }
+                res.redirect ('/users/profile/')
+             }
 
-
-
-
-
-   // checkUser: function(req, res){
-     //   let {email, password, rememberMe} = req.body
-   //     db.Usuario.findOne({
-    //        where:{
-     //           email
-    //        },
-   //         raw:true
-    //    })
-    //    .then(function(user){
-     //       let comparacionPassword = bcrypt.compareSync(password, user.password)
-     //       if(comparacionPassword){
-     //           req.session.user = {
-     //               id: user.id,
-     //               name: user.name,
-     //               email:user.email
-     //           }
-
-      //          if(rememberMe === 'on'){
-       //             res.cookie(
-     //                   'rememberUser', 
-      //                  {
-     //                       id: user.id,
-      //                      name: user.name,
-       //                     email:user.email
-      //                  },
-       //                 {
-       //                     maxAge: 1000 * 60 * 15
-        //                }
-        //            )
-       //         }
+                if(rememberMe === 'on'){
+                    res.cookie(
+                       'rememberUser', 
+                        {
+                          id: user.id,
+                          usuario: user.usuario,
+                          email:user.email
+                      },
+                       {
+                        maxAge: 1000 * 60 * 15
+                       }
+                    )
+               }
 
                 //En esta redirección estamos mandando la pk del usuario, pero
                 //pronto no lo vamos a necesitar mas
                 //res.redirect('/users/profile/' + user.id)
-         //       res.redirect('/users/profile')
-      //      }
-     //   })
-    //    .catch(function(err){
-   //         console.log(err)
-    //    })
-  //  },
-    
-}
+                res.redirect('/users/profile')
+        }
+        )
+      },
+      delete: function(req,res){
+        let id= req.params.id
+        db.Usuario.destroy({
+            where:{
+                id:id
+            }
+        })
+        .then (function(resp){
+            res.redirect('/')
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+      }
+    }
 module.exports = userControl
