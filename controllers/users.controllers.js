@@ -111,8 +111,6 @@ const userControl ={
                     )
                }
 
-                //En esta redirección estamos mandando la pk del usuario, pero
-                //pronto no lo vamos a necesitar mas
                 //res.redirect('/users/profile/' + user.id)
                 res.redirect('/users/profile')
         }

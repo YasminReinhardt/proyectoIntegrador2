@@ -27,7 +27,8 @@ const indexControl= {
 
     },
     logout: function(req,res){
-        
+        res.session.user= undefined
+        res.redirect('/')
     }
 }
 module.exports= indexControl
