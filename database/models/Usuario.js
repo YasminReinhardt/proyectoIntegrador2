@@ -27,7 +27,7 @@ module.exports= function(sequelize, dataTypes) {
             uniqueKey: true,
 
         }, 
-        photo: {
+        photo_url: {
             type: dataTypes.STRING, 
         }, 
         birthdate: {
@@ -36,8 +36,9 @@ module.exports= function(sequelize, dataTypes) {
         }
     }
     let config= {
-        tableName: "Usuarios", 
-        timestap: true
+        tableName: "usuarios", 
+        timestamps: false,
+        underscored: true
     }
     const Usuarios= sequelize.define(alias,columnas,config)
     Usuarios.associate= function(models){

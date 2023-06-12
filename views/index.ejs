@@ -23,18 +23,17 @@
 				<!-- la ruta ahora tiene el id -->
 					<a href="/productos/detail/ <%- productos[i].id %>">
 						<figure class="product-box_image">
-							<img src= <%= productos[i].imagen %> alt="">
+							<img src="<%= productos[i].img_url%>" alt="">
 						</figure>
 						<article class="product-box_data">
 							<h2><%= productos[i].nombre %></h2>
 							<p><%= productos[i].descripcion %> </p>
-							<p>Comentarios: <%= productos[i].comentarios.length %></p>
 
 						</article>
 					</a>
 				<!-- Aparece el nombre del usuario del producto -->
-					<a href="/users/profile <%-usuarios[i].id %>">
-					<p> <%= productos[i]?.usuarios.usuario %></p>
+					<a href="/users/profile <%- productos[i].usuario_id %>">
+					<p> <%= productos[i].usuarios.usuario%></p>
 				</a>
 				</section>
 			</div>
@@ -44,32 +43,7 @@
 			
 	<!-- /Novedades -->
 	<!-- Más comentados -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
-			</div>
-			<% for (let i=0; i<productos.length; i++) {%>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="/productos/detail">
-							<figure class="product-box_image">
-								<img src= <%= productos[i].imagen %> alt="">
-							</figure>
-							<article class="product-box_data">
-								<h2><%= productos[i].nombreProducto %></h2>
-								<p><%= productos[i].descripcion %> </p>
-								<p>Comentarios: <%= productos[i].comentarios.length %></p>
-						</a>
 	
-							</article>
-				
-					</section>
-				</div>
-				<% } %>
-		</div>
-	</div>
-</main>
 <%- include('./partials/footer.ejs') %>
 
 	<!-- /Más comentados -->

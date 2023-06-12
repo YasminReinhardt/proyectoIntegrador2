@@ -1,5 +1,5 @@
 module.exports= function(sequelize, dataTypes) {
-    let alias= "Productos"
+    let alias= "Producto"
     let columnas= {
         id: {
             autoIncrement: true,
@@ -12,28 +12,31 @@ module.exports= function(sequelize, dataTypes) {
             type: dataTypes.STRING, 
             alloswNull:true,
         },
-        descrpicion: {
+        descripcion: {
             type: dataTypes.TEXT
+        },
+        img_url:{
+            type: dataTypes.STRING
         }
 
     }
     let config= {
-        tableName: "Productos", 
-        timestap: true
+        tableName: "productos", 
+        timestamps: false,
+        underscored: true
+        
     }
-    const Productos= sequelize.define(alias,columnas,config)
-    Productos.associate= function(models){
-        Productos.belongsTo(models.Usuarios, {
-            as: 'usuarios',
-            foreignKey: 'usuario_id'
-        })
-    }
-    Productos.associate= function (models){
-        Productos.hasMany(models.Comentarios, {
-            as: "comentarios",
-           foreignKey: "productos_id",
-        })
+    const Producto= sequelize.define(alias,columnas,config)
+        Producto.associate= function (models){
+            Producto.belongsTo(models.Usuarios, {
+                as: 'usuarios',
+                foreignKey: 'usuario_id'
+            }),
+            Producto.hasMany(models.Comentarios, {
+                as: "comentarios",
+            foreignKey: "productos_id"
+            })
     }
 
-    return Productos
+    return Producto
 }
