@@ -15,7 +15,14 @@ const userControl ={
     },
     profile: function (req,res){
         let id= req.session.user.id
-        db.Usuario.findByPk(id)
+        db.Usuarios.findByPk(id, {include:[
+            {
+                association: 'productos', 
+                include:[
+                    {association: 'comentarios'}
+                ]
+            }
+        ]})
         .then (function(user){
             res.render ('profile', {
             usuarioLogueado: true,
@@ -29,7 +36,7 @@ const userControl ={
     },
     edit: function (req,res){
         let id= req.params.id
-        db.Usuario.findByPk(id)
+        db.Usuarios.findByPk(id)
         .then (function(user){
             res.render ('edit-profile', {
                 usuarioLogueado: true,
@@ -54,15 +61,21 @@ const userControl ={
         })
         .then (function(data){
             res.redirect ("/users/login")
+            // if (email==user.email){
+            //     res.send ("El email ya fue utilizado")
+            // } else if (email==null){
+            //     res.send("el campo esta vacio")
+            // }
         })
         .catch(function(err){
             console.log(err)
         })
+
     }, 
     update: function (req,res){
         let id= req.params.id
         let {usuario,email}= req.body 
-        db.Usuario.update({
+        db.Usuarios.update({
             usuario: usuario, 
             email: email
         }, {
@@ -79,46 +92,50 @@ const userControl ={
     },
     
     checkUser: function(req, res){
-    let {email, password, rememberMe} = req.body
-        db.Usuario.findOne({
-            where:{
-                email: email
+        let errors={}
+        let {email, password, rememberMe} = req.body
+            db.Usuarios.findOne({
+                where:{
+                    email: email
+                },
+
+            })
+            .then(function(user){
+            if (user !== null){
+                let comparacionPassword = bcrypt.compareSync(password, user.password)
+                if(comparacionPassword){
+                    req.session.user={
+                        id:user.id, 
+                        usuario: user.usuario, 
+                        email: user.email,
+                    }
+                    if(rememberMe === 'on'){
+                        res.cookie('rememberUser', {
+                                id: user.id,
+                                usuario: user.usuario,
+                                email:user.email
+                            },{
+                                maxAge: 1000 * 60 * 15
+                            })
+                        }
+                            res.redirect ('/users/profile')
+                        }else{
+                            res.send('cLave erronea')
+                        } 
+                    } else {
+                        errors.message = ('No existe ese usuario')
+                        res.locals.errors=errors
+                        return res.render('login')
+                    }
+                })
+                .catch(function(error){
+                    res.send(error)
+                })
             },
-            raw:true
-        })
-        .then(function(user){
-         let comparacionPassword = bcrypt.compareSync(password, user.password)
-            if(comparacionPassword){
-                req.session.user={
-                    id:user.id, 
-                    usuario: user.usuario, 
-                    email: user.email,
-                }
-                res.redirect ('/users/profile/')
-             }
 
-                if(rememberMe === 'on'){
-                    res.cookie(
-                       'rememberUser', 
-                        {
-                          id: user.id,
-                          usuario: user.usuario,
-                          email:user.email
-                      },
-                       {
-                        maxAge: 1000 * 60 * 15
-                       }
-                    )
-               }
-
-                //res.redirect('/users/profile/' + user.id)
-                res.redirect('/users/profile')
-        }
-        )
-      },
-      delete: function(req,res){
+    delete: function(req,res){
         let id= req.params.id
-        db.Usuario.destroy({
+        db.Usuarios.destroy({
             where:{
                 id:id
             }

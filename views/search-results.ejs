@@ -17,7 +17,7 @@
 		<div class="container products-wrapper">
 			<%for(let i = 0; i < resultados.length ; i++){%>
 			<div class="d-flex align-items-center">
-				<a href="/productos/detail <%- productos[i].id %>">
+				<a href="/productos/detail/ <%- resultados[i].id %>">
 				<h2 class="products-title"><%= resultados[i].nombre%>"</h2>
 			</a>
 		</div>
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<%}%>
-		<% for( let i=0; i < 1; i++ ) { %>
+		<!-- <% for( let i=0; i < 1; i++ ) { %>
 			<div class="col-12 col-lg-4">
 	
 			   <section class="comments">
@@ -68,7 +68,7 @@
 				</div>	
 					<% } %>
 	
-				</section>
+				</section> -->
 		</div>
 	</div>
 

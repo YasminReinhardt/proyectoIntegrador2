@@ -4,11 +4,21 @@ const bcrypt = require('bcryptjs')
 let op = db.Sequelize.Op
 const productosControl= {
     productos:function (req,res){
-        db.Comentario.findAll({
-            raw: true,
-            nest: true,
+        let id= req.params.id
+        db.Producto.findByPk(id, {
             include: [
-                {association: 'productos'},
+                {
+                    association: 'comentarios',
+                    include:[
+                        {association: 'usuarios'}
+                    ] 
+                },
+                {
+                    association: 'usuarios',
+                    include:[
+                        {association: 'produ'}
+                    ] 
+                },
             ]
         })
         .then(function(data){
@@ -16,24 +26,12 @@ const productosControl= {
               usuarioLogueado: false,
               producto:data,
             })
+           // res.send(data)
          })
          .catch(function(err){
              console.log(err)
          })
        //cuando toca detalle de producto te lleve al corresponiente 
-       let id= req.params.id
-       db.Producto.findByPk(id, {
-           raw:true
-       })
-       .then(function(data){
-          res.render('product', {
-            usuarioLogueado: false,
-            producto:data,
-          })
-       })
-       .catch(function(err){
-           console.log(err)
-       })
     },
     productosAdd:function (req,res){
         res.render ('product-add', {
@@ -50,11 +48,9 @@ const productosControl= {
                     [op.like]: '%${busquedaUsuario}%'
                 }
             }, 
-            raw:true,
         })
         .then(function(data){
             let encontroResultados
-            
             if(data.length > 0){
                 encontroResultados = true
             } else {

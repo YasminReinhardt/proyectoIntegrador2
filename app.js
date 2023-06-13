@@ -45,6 +45,8 @@ app.use(function(req, res, next){
 
    } else {
       res.locals.usuarioLogueado = false
+      res.locals.user = undefined
+
     }
        return next()
  })

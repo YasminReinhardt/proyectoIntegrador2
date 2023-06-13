@@ -14,7 +14,7 @@ module.exports= function(sequelize, dataTypes) {
         },
         email: {
             type: dataTypes.STRING, 
-            alloswNull:true,
+            alloswNull:false,
             uniqueKey: true,
         }, 
         password: {
@@ -42,16 +42,18 @@ module.exports= function(sequelize, dataTypes) {
     }
     const Usuarios= sequelize.define(alias,columnas,config)
     Usuarios.associate= function(models){
-        Usuarios.hasMany(models.Productos, {
-            as: 'productos',
+        Usuarios.hasMany(models.Producto, {
+            as: 'produ',
             foreignKey: 'usuario_id'
-        })
-    }
-    Usuarios.associate= function(models){
+        }),
+        
         Usuarios.hasMany(models.Comentarios, {
-          as: 'comentarios',
-           foreignKey: 'usuario_id'
-        })
+            as: 'comentarios',
+              foreignKey: 'usuario_id',
+              underscored:true
+          })
     }
+       
+    
     return Usuarios
 }
