@@ -1,5 +1,5 @@
 const data = require('../data/data')
-const db= require ('../database/models/index')
+const db= require ('../database/models/models/index')
 const bcrypt = require('bcryptjs')
 const userControl ={ 
     login: function (req,res){
