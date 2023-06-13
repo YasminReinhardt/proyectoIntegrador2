@@ -42,18 +42,18 @@ const userControl ={
 
     },
     create: function(req,res){
-        let {usuario,email,password,photo,birthdate,dni}=req.body
+        let {usuario,email,password,photo_url,birthdate,dni}=req.body
         let passEncriptada = bcrypt.hashSync(password, 12)
-        db.Usuario.create({
+        db.Usuarios.create({
             usuario: usuario,
             email: email,
             password: passEncriptada,
-            photo: photo,
+            photo_url: photo_url,
             birthdate:birthdate,
             dni:dni,
         })
         .then (function(data){
-            res.redirect ("/users/profile")
+            res.redirect ("/users/login")
         })
         .catch(function(err){
             console.log(err)

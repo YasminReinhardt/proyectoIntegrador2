@@ -26,12 +26,18 @@
 			<!-- METODO POST -->
 			<h2 class="col-12"> 			
 				<form action="/users/register" method="POST">
-					<input name="usuario" type="text" placeholder="Digita tu nombre">
-					<input name="email" type="text" placeholder="Digita tu email">
+					<input type="text" name="usuario"  placeholder="Digita tu nombre">
+
+					<input type="email" name="email"  placeholder="Digita tu email">
+
 					<input type="date" name="birthdate" placeholder="Fecha nacimiento">
+
+					<input type="text" name="password"  placeholder="Digita tu contraseña">
+
 					<input type="number" name="dni" placeholder="DNI">
-					<input type="text" name="photo" placeholder="Foto de perfil">
-					<input name="password" type="text" placeholder="Digita tu contraseña">
+
+					<input type="text" name="photo_url" placeholder="Foto de perfil">
+					
 					<input type="submit" value="Registrame">
 				</form>
 			</h2>	
