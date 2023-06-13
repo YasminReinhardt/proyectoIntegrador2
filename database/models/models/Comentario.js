@@ -8,11 +8,20 @@ module.exports= function(sequelize, dataTypes) {
         },
         texto: {
             type: dataTypes.TEXT
-        }
+        }, 
+        
+        created_at: {
+            type:dataTypes.DATE,
+            allowNull: true,
+        },
+        updated_at: {
+            type:dataTypes.DATE,
+            allowNull:true,
+            }
     }
     let config= {
         tableName: "comentarios", 
-        timestamps: false,
+        timestamps: true,
         underscored: true 
     }
     const Comentarios= sequelize.define(alias,columnas,config)

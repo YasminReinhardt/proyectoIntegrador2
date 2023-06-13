@@ -18,12 +18,12 @@ const productosControl= {
                     include:[
                         {association: 'produ'}
                     ] 
-                },
-            ]
+                }           
+             ],
+
         })
         .then(function(data){
             res.render('product', {
-              usuarioLogueado: false,
               producto:data,
             })
            // res.send(data)
@@ -45,9 +45,12 @@ const productosControl= {
         db.Producto.findAll({
             where:{
                 nombre: {
-                    [op.like]: '%${busquedaUsuario}%'
-                }
+                    [op.like]: `%${busquedaUsuario}%`}
             }, 
+            include: [
+                {association: "usuarios"}, 
+                {association: "comentarios"},
+            ]
         })
         .then(function(data){
             let encontroResultados

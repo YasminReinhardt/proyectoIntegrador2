@@ -9,12 +9,11 @@ const indexControl= {
                     {
                         association: 'comentarios', 
                         include:[{
-                            association: 'usuarios'
-                        }
+                            association: 'usuarios'}
                         ]
                     },
                     {association: 'usuarios'}
-                ]
+                ], 
             }
         )
         .then(function(data){
@@ -26,7 +25,8 @@ const indexControl= {
             }
             )
         })
-        .catch(function(err){console.log(err)})
+        .catch(function(err)
+            {console.log(err)})
 
 
     },

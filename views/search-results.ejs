@@ -11,64 +11,36 @@
 		<div class="row">
 			<% if(encontroResultados){%>
 			<div class="col-12">
-				<h2 class="products-title">Estos son los resultados de tu busqueda "<%= busqueda %></h2>
+				<h2 class="products-title">Estos son los resultados de tu busqueda "<%= busqueda %>"</h2>
 			</div>
 		</div>
 		<div class="container products-wrapper">
 			<%for(let i = 0; i < resultados.length ; i++){%>
 			<div class="d-flex align-items-center">
 				<a href="/productos/detail/ <%- resultados[i].id %>">
-				<h2 class="products-title"><%= resultados[i].nombre%>"</h2>
+				<h2 class="products-title">"<%= resultados[i].nombre%>"</h2>
 			</a>
 		</div>
 		<div class="product-detail">		
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
 				<a href="/productos/detail">
-					<img src="<%= resultados[i].imagen %>" alt="" class="product-box_image">
+					<img src="<%= resultados[i].img_url %>" alt="" class="product-box_image">
 					<p class="product-detail-description"><%= resultados[i].descripcion %></p>
+			</a>
+			<a href="/users/profile">
+				<p class="product-detail-description"> Producto publicado por: "<%= resultados[i].usuarios.usuario%>"</p>
 			</a>
 			<%}%>
 		</article>
 		<%} else {%>
 			<div class="col-12">
-				<h2 class="products-title"> No se encontro la palabra: "<%= busqueda %></h2>
+				<h2 class="products-title"> No se encontro la palabra: "<%= busqueda %>"</h2>
 			</div>
 		</div>
 		<%}%>
-		<!-- <% for( let i=0; i < 1; i++ ) { %>
-			<div class="col-12 col-lg-4">
-	
-			   <section class="comments">
-				<% for( let index = 0; index < productos[i].comentarios.length; index++ ) { %>
-	
-				   <article>
-					   <img src="<%= productos[i].comentarios[index].imagenPerfil %> " alt="">
-					   <div class="data">
-						   <p class="user">
-							   <strong> 
-								   <a href="/users/profile">
-									   <%=productos[i].comentarios[index].nombreDeUsuario %>
-								   </a> 
-							   </strong>
-								<p><%= productos[i].comentarios[index].textoDelComentario%> </p>
-	
-						   </p>
-					   </div>
-					</article>
-					<section>
-						<% } %>
-			
-						<form class="form" action="/productos/detail" method="get">
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-						</form>
 
-					</section>
-				</div>	
-					<% } %>
-	
-				</section> -->
+				</section> 
 		</div>
 	</div>
 

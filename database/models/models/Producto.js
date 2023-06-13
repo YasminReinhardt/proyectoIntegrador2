@@ -18,12 +18,21 @@ module.exports= function(sequelize, dataTypes) {
         img_url:{
             type: dataTypes.STRING
         }
+        ,
+        created_at: {
+            type:dataTypes.DATE,
+            allowNull: true,
+        },
+        updated_at: {
+            type:dataTypes.DATE,
+            allowNull: true,
+ },
 
     }
     let config= {
         tableName: "productos", 
-        timestamps: false,
-        underscored: true
+        timestamps: true,
+        underscored: true,
         
     }
     const Producto= sequelize.define(alias,columnas,config)
