@@ -17,7 +17,13 @@ module.exports= function(sequelize, dataTypes) {
         updated_at: {
             type:dataTypes.DATE,
             allowNull:true,
-            }
+            }, 
+        usuario_id: {
+            type:dataTypes.INTEGER,
+        }, 
+        productos_id: {
+            type: dataTypes.INTEGER
+        },
     }
     let config= {
         tableName: "comentarios", 

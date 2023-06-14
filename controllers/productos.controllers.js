@@ -88,13 +88,15 @@ const productosControl= {
     },
     addComment: function(req,res){
         db.Usuarios.findOne({
-
+            where: [{usuario: req.session.user}]
         })
         .then(function(data){
             let id= req.params.id;
             let coment= req.body.comentario
             db.Comentarios.create({
-                texto: coment
+                productos_id: id,
+                texto: coment, 
+                usuario_id: data.id
             })
             return res.redirect (`/productos/product/${id}`)
         })

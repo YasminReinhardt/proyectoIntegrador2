@@ -14,7 +14,8 @@ const userControl ={
         )
     },
     profile: function (req,res){
-        let id= req.session.user.id
+        // let id = req.session.user.id
+        let id = req.params.id
         db.Usuarios.findByPk(id, {include:[
             {
                 association: 'productos', 
@@ -92,7 +93,7 @@ const userControl ={
     },
     
     checkUser: function(req, res){
-        let errors={}
+        // let errors={}
         let {email, password, rememberMe} = req.body
             db.Usuarios.findOne({
                 where:{
@@ -118,7 +119,7 @@ const userControl ={
                                 maxAge: 1000 * 60 * 15
                             })
                         }
-                            res.redirect ('/users/profile')
+                         res.redirect ('/')
                         }else{
                             res.send('cLave erronea')
                         } 

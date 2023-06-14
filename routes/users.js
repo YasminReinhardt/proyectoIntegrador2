@@ -9,8 +9,8 @@ router.post('/login',userControl.checkUser)
 router.post('/register', userControl.create)
 router.get ('/register', userControl.register)
 
-router.get ('/profile/', userControl.profile)
-router.post('/profile/:id', userControl.update)
+router.get ('/profile/:id?', userControl.profile)
+router.post('/profile/:id?', userControl.update)
 
 router.post ('/delete/:id',userControl.delete)
 
