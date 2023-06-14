@@ -13,4 +13,7 @@ router.get ('/productosAdd', productosControl.productosAdd )
 router.post ('/productosAdd/create', productosControl.create)
 router.get ('/searchResults', productosControl.searchResults)
 
+router.post('/product/:id?', productosControl.addComment);
+
+
 module.exports = router;

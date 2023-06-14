@@ -5,17 +5,13 @@ const indexControl= {
     index: function (req,res){
         db.Producto.findAll(
             {
-                include:[
-                    {
-                        association: 'comentarios', 
-                        include:[{
-                            association: 'usuarios'}
-                        ]
-                    },
-                    {association: 'usuarios'}
-                ], 
-            }
-        )
+                include:[{association: 'comentarios', 
+                        include:[{association: 'usuarios'}
+                        ]},{association: 'usuarios'}], 
+                // order: [['created_at', 'DESC']],
+                limit: 12,              
+
+            })
         .then(function(data){
             console.log(data)
           // res.send(data)

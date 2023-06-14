@@ -50,7 +50,8 @@ const productosControl= {
             include: [
                 {association: "usuarios"}, 
                 {association: "comentarios"},
-            ]
+            ], 
+            // order: [['created_at', 'DESC']],
         })
         .then(function(data){
             let encontroResultados
@@ -85,7 +86,24 @@ const productosControl= {
             console.log(err)
         })
     },
-}
+    addComment: function(req,res){
+        db.Usuarios.findOne({
+
+        })
+        .then(function(data){
+            let id= req.params.id;
+            let coment= req.body.comentario
+            db.Comentarios.create({
+                texto: coment
+            })
+            return res.redirect (`/productos/product/${id}`)
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+},
+
+} 
 ///const productosControl = {
    // index: function(req, res){
      //   res.render("product", {
