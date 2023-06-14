@@ -121,7 +121,7 @@ const userControl ={
                         }
                          res.redirect ('/')
                         }else{
-                            res.send('cLave erronea')
+                            res.send('clave erronea')
                         } 
                     } else {
                         errors.message = ('No existe ese usuario')

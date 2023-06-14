@@ -87,23 +87,18 @@ const productosControl= {
         })
     },
     addComment: function(req,res){
-        db.Usuarios.findOne({
-            where: [{usuario: req.session.user}]
-        })
-        .then(function(data){
-            let id= req.params.id;
-            let coment= req.body.comentario
-            db.Comentarios.create({
-                productos_id: id,
-                texto: coment, 
-                usuario_id: data.id
-            })
-            return res.redirect (`/productos/product/${id}`)
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-},
+        if (req.session.user){
+           let comment= 
+        {       productos_id: req.params.id, 
+                usuario_id: req.session.user.id, 
+                texto: req.body.comentario}
+            db.Comentarios.create(comment)
+                return res.redirect(`/productos/product/${id}`)
+        }
+            else {
+                return res.redirect('users/login')
+            }
+        },
 
 } 
 ///const productosControl = {
