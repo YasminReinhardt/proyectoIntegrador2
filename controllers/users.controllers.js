@@ -93,7 +93,7 @@ const userControl ={
     },
     
     checkUser: function(req, res){
-        // let errors={}
+        let errors={}
         let {email, password, rememberMe} = req.body
             db.Usuarios.findOne({
                 where:{

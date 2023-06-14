@@ -9,10 +9,13 @@ const productosControl= require ('../controllers/productos.controllers')
 
 router.get ('/detail/:id', productosControl.productos)
 router.get ('/detail', productosControl.productos)
+
 router.get ('/productosAdd', productosControl.productosAdd )
 router.post ('/productosAdd/create', productosControl.create)
+
 router.get ('/searchResults', productosControl.searchResults)
 
+router.post('/users/login ', productosControl.addComment),
 router.post('/product/:id?', productosControl.addComment);
 
 

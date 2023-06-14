@@ -34,18 +34,16 @@ const productosControl= {
        //cuando toca detalle de producto te lleve al corresponiente 
     },
     productosAdd:function (req,res){
-        res.render ('product-add', {
-           usuarioLogueado: true,
-           usuario : data.usuario,
-           productos: data.productos,
-       })
+        res.render ('product-add')
    },
     searchResults:function (req,res){
         let busquedaUsuario= req.query.busqueda
         db.Producto.findAll({
             where:{
-                nombre: {
-                    [op.like]: `%${busquedaUsuario}%`}
+                [op.or]:[
+                    {nombre: {[op.like]: `%${busquedaUsuario}%`}}, 
+                    {descripcion: {[op.like]: `%${busquedaUsuario}%`}}
+                ],
             }, 
             include: [
                 {association: "usuarios"}, 
@@ -74,18 +72,21 @@ const productosControl= {
 
         },
     create: function(req,res){
-
-        db.Producto.create({
+    if (req.session.user){
+        let creacion= {
+            img_url: req.body.foto, 
             nombre: req.body.nombre, 
-            descrpicion:req.body.descrpicion,
-        })
-        .then(function(data){
-            res.redirect('/')
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-    },
+            descrpicion: req.body.descrpicion,
+            usuario_id: req.session.user.id
+        }
+        db.Producto.create(creacion)
+            return res.redirect ('/')
+
+    }else {
+            return res.redirect ('/users/login')
+    }
+
+}, 
     addComment: function(req,res){
         if (req.session.user){
            let comment= 

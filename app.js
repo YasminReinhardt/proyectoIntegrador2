@@ -23,16 +23,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use ('/productos', productosRouter); //donde nos debe llevar cuando se pone productos en la pagina
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-//session use
 app.use (session({
   secret: "Nuestro mensaje secreto",
   resave: false,
@@ -50,6 +40,17 @@ app.use(function(req, res, next){
     }
        return next()
  })
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use ('/productos', productosRouter); //donde nos debe llevar cuando se pone productos en la pagina
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+//session use
+
  
 // error handler
 app.use(function(err, req, res, next) {
