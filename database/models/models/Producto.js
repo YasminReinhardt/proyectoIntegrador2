@@ -13,7 +13,7 @@ module.exports= function(sequelize, dataTypes) {
             alloswNull:true,
         },
         descripcion: {
-            type: dataTypes.TEXT
+            type: dataTypes.TEXT,
         },
         usuario_id: {
             type: dataTypes.INTEGER,

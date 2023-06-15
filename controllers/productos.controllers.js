@@ -9,18 +9,17 @@ const productosControl= {
             include: [
                 {
                     association: 'comentarios',
-                    include:[
+                    include:
                         {association: 'usuarios'}
-                    ] 
+                    
                 },
                 {
                     association: 'usuarios',
-                    include:[
+                    include:
                         {association: 'productos'}
-                    ] 
+                    
                 }           
              ],
-
         })
         .then(function(data){
             res.render('product', {
@@ -80,7 +79,7 @@ const productosControl= {
         let creacion= {
             img_url: req.body.foto, 
             nombre: req.body.nombre, 
-            descrpicion: req.body.descrpicion,
+            descripcion: req.body.descripcion,
             usuario_id: req.session.user.id
         }
         db.Producto.create(creacion)
@@ -106,43 +105,52 @@ const productosControl= {
         },
 
     editProd: function(req,res){
-        res.render('product-edit', {
-            nombre: req.body.nombre, 
-            descrpicion: req.body.descripcion, 
-            img_url: req.body.foto,
-            id: req.body.id
+        let id = req.params.id
+        db.Producto.findByPk(id)
+        .then(function(data){
+            res.render('product-edit', {
+                nombre: data.nombre, 
+                descripcion: data.descripcion, 
+                img_url: data.img_url,
+                id: data.id
+            })
         })
-
+        .catch(function(error){
+            console.log(error)
+        })
     },
     updateProd: function(req,res){
-        if (req.body.nombre != ''){
+        let id = req.params.id
+        let {nombre, descripcion, img_url} = req.body
+        if (nombre != ''){
             db.Producto.update({
-                nombre: req.body.nombre
+                nombre: nombre
             }, {
                 where: {
-                    id: req.body.id
+                    id
                 }
             })
             
         }
-        if (req.body.descripcion != ''){
+        if (descripcion != ''){
             db.Producto.update({
-                descripcion: req.body.descripcion
+                descripcion: descripcion
             }, {
                 where: {
-                    id: req.body.id
+                    id
                 }
             })
         }
-        if (req.body.foto != ''){
+        if (img_url != ''){
             db.Producto.update({
-                img_url: req.body.foto
+                img_url: img_url
             }, {
                 where: {
-                    id: req.body.id
+                    id
                 }
             })
         }
+        res.redirect("/")
 
     }, 
     deleteProd:function(req,res) {

@@ -31,7 +31,7 @@ const userControl ={
         ]})
         .then (function(user){
             res.render ('profile', {
-            user : user
+            usuario : user
         })
         console.log(data)
         })

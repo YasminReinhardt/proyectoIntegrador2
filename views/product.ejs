@@ -21,25 +21,15 @@
 					<p class="product-detail-description">
 						<h2 class="col-12"> 
 							<% if (usuarioLogueado && user.id == producto.usuarios.id){ %>
-							<form action="/productos/product-edit" method="POST">
-								<input type= "hidden" name="id" value="<%= producto.id%>">
-								<input type= "hidden" name="nombre" value="<%= producto.nombre %>">
-								<input type= "hidden" name="descripcion" value="<%= producto.descripcion%>">
-								<input type= "hidden" name="foto" value="<%= producto.img_url%>">
+							<form action="/productos/product-edit/<%= producto.id  %>" method="get">
 								<input type="submit" value="Editar producto">
-				
 							</form>
-							<% } %>
-						</h2>
-						<h2 class="col-12"> 
-							<% if (usuarioLogueado && user.id == producto.usuarios.id){ %>
 							<form action="/productos/deleteProd" method="POST">
-								<input type= "hidden" name="id" value="<%= producto.id%>">
 								<input type="submit" value="Eliminar producto">
-				
 							</form>
 							<% } %>
 						</h2>
+			
 						<!-- <a href="/productos/product-edit">
 							Editar producto
 						</a> -->

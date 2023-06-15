@@ -9,10 +9,10 @@
             <h2 class="products-title">Editar mi producto</h2>
         </div>
         <h2 class="col-12"> 
-            <form action="/productos/updateProd/ <%=id%>" method="POST">
+            <form action="/productos/updateProd/<%= id%>" method="POST">
                 <input type= "text" name="nombre" value="" placeholder="<%= nombre %>">
-                <input type= "text" name="descripcion" value="" placeholder="<%= descrpicion %>">
-                <input type= "text" name="foto" value="" placeholder="<%= img_url%>">
+                <input type= "text" name="descrpicion" value="" placeholder="<%= descripcion %>">
+                <input type= "text" name="img_url" value="" placeholder="<%= img_url%>">
                 <input type="submit" value="Guardar cambios realizados">
 
             </form>
