@@ -19,6 +19,7 @@ router.post('/users/login ', productosControl.addComment),
 router.post('/product/:id?', productosControl.addComment);
 
 router.post('/product-edit',productosControl.editProd);
-
+router.post ('/product/updateProd', productosControl.updateProd);
+router.post ('/product/deleteProd', productosControl.deleteProd);
 
 module.exports = router;

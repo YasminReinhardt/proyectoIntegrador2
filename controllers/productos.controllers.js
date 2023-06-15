@@ -104,9 +104,7 @@ const productosControl= {
                 return res.redirect('/users/login')
             }
         },
-    deleteProd:function(req,res) {
 
-    }, 
     editProd: function(req,res){
         res.render('product-edit', {
             nombre: req.body.nombre, 
@@ -117,8 +115,45 @@ const productosControl= {
 
     },
     updateProd: function(req,res){
+        if (req.body.nombre != ''){
+            db.Producto.update({
+                nombre: req.body.nombre
+            }, {
+                where: {
+                    id: req.body.id
+                }
+            })
+            
+        }
+        if (req.body.descripcion != ''){
+            db.Producto.update({
+                descripcion: req.body.descripcion
+            }, {
+                where: {
+                    id: req.body.id
+                }
+            })
+        }
+        if (req.body.foto != ''){
+            db.Producto.update({
+                img_url: req.body.foto
+            }, {
+                where: {
+                    id: req.body.id
+                }
+            })
+        }
 
-    }
+    }, 
+    deleteProd:function(req,res) {
+        db.Comentarios.destroy({
+            where: {productos_id: req.body.id}
+        })
+        db.Producto.destroy ({
+            where:{id:req.body.id}
+        })
+        return res.redirect ('/')
+    }, 
 } 
 ///const productosControl = {
    // index: function(req, res){
