@@ -34,7 +34,11 @@ const productosControl= {
        //cuando toca detalle de producto te lleve al corresponiente 
     },
     productosAdd:function (req,res){
-        res.render ('product-add')
+        if(req.session.user){
+            res.render ('product-add')
+        }else{
+            res.render('/')
+        }
    },
     searchResults:function (req,res){
         let busquedaUsuario= req.query.busqueda
@@ -49,7 +53,7 @@ const productosControl= {
                 {association: "usuarios"}, 
                 {association: "comentarios"},
             ], 
-            // order: [['created_at', 'DESC']],
+            order: [['created_at', 'DESC']],
         })
         .then(function(data){
             let encontroResultados
@@ -94,13 +98,27 @@ const productosControl= {
                 usuario_id: req.session.user.id, 
                 texto: req.body.comentario}
             db.Comentarios.create(comment)
-                return res.redirect(`/productos/product/${id}`)
+                return res.redirect(`/productos/detail/${req.params.id}`)
         }
             else {
-                return res.redirect('users/login')
+                return res.redirect('/users/login')
             }
         },
+    deleteProd:function(req,res) {
 
+    }, 
+    editProd: function(req,res){
+        res.render('product-edit', {
+            nombre: req.body.nombre, 
+            descrpicion: req.body.descripcion, 
+            img_url: req.body.foto,
+            id: req.body.id
+        })
+
+    },
+    updateProd: function(req,res){
+        
+    }
 } 
 ///const productosControl = {
    // index: function(req, res){

@@ -9,19 +9,6 @@
 			<div class="col-12">
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
-			<!-- Show the "ultimos" products 
-			<h2 class="col-12"> 
-				<form>
-					<input name="nombre" placeholder="<%= usuario[0].nombre %>">
-					<input name="username" placeholder="<%= usuario[0].usuario %>">
-					<input name="email" placeholder="<%= usuario[0].email %>">
-					<input name="nacimiento" placeholder="<%= usuario[0].fechaNacimiento %>">
-					<input name="nacimiento" placeholder="<%= usuario[0].documento %>">
-					<input type="submit" value="Guardar cambios realizados">
-
-				</form>
-			</h2>
-		-->
 			<h2 class="col-12"> 
 				<form action="/users/edit-profile/ <%= usuario.id  %>" method="POST">
 					<input name="usuario" value="<%= usuario.usuario%>">

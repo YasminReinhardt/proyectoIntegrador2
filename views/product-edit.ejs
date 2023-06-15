@@ -1,0 +1,21 @@
+
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+
+<!-- Novedades -->
+<div class="container products-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="products-title">Editar mi producto</h2>
+        </div>
+        <h2 class="col-12"> 
+            <form action="/users/edit-p/ <%= usuario.id  %>" method="POST">
+                <input type= "text" name="nombre" value="<%= usuario.usuario%>">
+                <input type= "text" name="descripcion" value="<%= usuario.email %>">
+                <input type= "text" name="foto" value="<%= usuario.birthdate %>">
+                <input type="submit" value="Guardar cambios realizados">
+
+            </form>
+        </h2>
+
+<%- include('./partials/footer.ejs') %>

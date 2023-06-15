@@ -8,8 +8,7 @@ const indexControl= {
                 include:[{association: 'comentarios', 
                         include:[{association: 'usuarios'}
                         ]},{association: 'usuarios'}], 
-                // order: [['created_at', 'DESC']],
-                limit: 12,              
+                order: [['created_at', 'DESC']],
 
             })
         .then(function(data){

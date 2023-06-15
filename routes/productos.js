@@ -18,5 +18,7 @@ router.get ('/searchResults', productosControl.searchResults)
 router.post('/users/login ', productosControl.addComment),
 router.post('/product/:id?', productosControl.addComment);
 
+router.post('/product-edit',productosControl.editProd);
+
 
 module.exports = router;

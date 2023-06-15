@@ -17,8 +17,13 @@
 						<a href="/productos/productosAdd">Agregar un producto</a>
 					</p>
 					<p class="product-detail-description">
-						<a href="/users/profile/<%- producto.usuarios.id %>">
-							<%= producto.usuarios.usuario %>
+						<a href="/users/profile/<%= producto.usuarios.id %>">
+							Usuario: <%= producto.usuarios.usuario %>
+						</a>
+					</p>
+					<p class="product-detail-description">
+						<a href="/productos/product-edit">
+							Editar producto
 						</a>
 					</p>
 				</div>
@@ -32,17 +37,17 @@
 							<div class="col-12 col-lg-4">
 
 							   <section class="comments">
-								<% for( let index = 0; index <  producto.comentarios.length; index++ ) { %>
+								<% for( let index = 0; index < producto.comentarios.length; index++ ) { %>
 
 								   <article>
 									   <div class="data">
 										   <p class="user">
 											   <strong> 
-												   <a href="/users/profile">
-													   <%=producto.comentarios[i].usuario %>
+												   <a href="/users/profile/<%=producto.usuarios.id %>">
+													   <%= producto.comentarios[index].usuarios.usuario %>
 												   </a> 
 											   </strong>
-												<p><%= producto.comentarios[i].texto%> </p>
+												<p><%= producto.comentarios[index].texto%> </p>
 
 										   </p>
 									   </div>

@@ -3,20 +3,25 @@ const db= require ('../database/models/models/index')
 const bcrypt = require('bcryptjs')
 const userControl ={ 
     login: function (req,res){
-        res.render ('login', {
-            usuarioLogueado: false,
-        })
+        if (req.session.user){
+            res.redirect('/')
+        }else{
+            res.render ('login')
+        }
+
     },
     register: function (req,res){
-        res.render ('register', {
-            usuarioLogueado: false
+        if (req.session.user){
+            res.redirect('/')
+        }else{
+            res.render ('register')
         }
-        )
     },
     profile: function (req,res){
         // let id = req.session.user.id
         let id = req.params.id
-        db.Usuarios.findByPk(id, {include:[
+        db.Usuarios.findByPk(id, {include:
+            [
             {
                 association: 'productos', 
                 include:[
@@ -26,7 +31,6 @@ const userControl ={
         ]})
         .then (function(user){
             res.render ('profile', {
-            usuarioLogueado: true,
             usuario : user
         })
         })
@@ -51,27 +55,43 @@ const userControl ={
     },
     create: function(req,res){
         let {usuario,email,password,photo_url,birthdate,dni}=req.body
-        let passEncriptada = bcrypt.hashSync(password, 12)
-        db.Usuarios.create({
-            usuario: usuario,
-            email: email,
-            password: passEncriptada,
-            photo_url: photo_url,
-            birthdate:birthdate,
-            dni:dni,
-        })
-        .then (function(data){
-            res.redirect ("/users/login")
-            // if (email==user.email){
-            //     res.send ("El email ya fue utilizado")
-            // } else if (email==null){
-            //     res.send("el campo esta vacio")
-            // }
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-
+        if (
+            (password!== '') &&
+            (password.length>4) &&
+            (email !== '')&&
+            (email !== req.locals.email)
+            ){
+            let passEncriptada = bcrypt.hashSync(password, 12);
+            db.Usuarios.create({
+                usuario: usuario,
+                email: email,
+                password: passEncriptada,
+                photo_url: photo_url,
+                birthdate:birthdate,
+                dni:dni,
+            })
+            .then (function(data){
+                res.redirect ("/users/login")
+   
+            })
+            .catch(function(err){
+                console.log(err)
+            })
+        } else {
+            let errors= {}
+            if (password==''){
+                errors.message= "debes ingresar una contrasenia"
+            }else if (password.length <3){
+                errors.message= "debes ingresar una contrasenia con mas de 4 caracteres"
+            }else if (email==''){
+                errors.message= "Debes ingresar un email."
+            } else {
+                errors.message= "Ese email ya fue utilizado"
+            }
+            res.locals.errors=errors
+            res.render('register')
+        }
+       
     }, 
     update: function (req,res){
         let id= req.params.id
