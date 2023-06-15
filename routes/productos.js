@@ -21,6 +21,6 @@ router.post('/product/:id?', productosControl.addComment);
 router.get("/product-edit/:id?", productosControl.editProd )
 router.post('/updateProd/:id?',productosControl.updateProd);
 
-router.post ('/product/deleteProd', productosControl.deleteProd);
+router.post ('/deleteProd/:id', productosControl.deleteProd);
 
 module.exports = router;

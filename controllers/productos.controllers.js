@@ -154,13 +154,20 @@ const productosControl= {
 
     }, 
     deleteProd:function(req,res) {
-        db.Comentarios.destroy({
-            where: {productos_id: req.body.id}
+        let id = req.params.id
+        // db.Comentarios.destroy({
+        //     where: {productos_id: req.body.id}
+        // })
+        db.Producto.findByPk(id)
+        .then(function(data){
+            db.Producto.destroy(
+                {where: {id:id}}
+            )
+            return res.redirect ('/')
         })
-        db.Producto.destroy ({
-            where:{id:req.body.id}
-        })
-        return res.redirect ('/')
+        .catch(function(err){
+            console.log(err)
+        }) 
     }, 
 } 
 ///const productosControl = {

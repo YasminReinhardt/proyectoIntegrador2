@@ -24,7 +24,7 @@
 							<form action="/productos/product-edit/<%= producto.id  %>" method="get">
 								<input type="submit" value="Editar producto">
 							</form>
-							<form action="/productos/deleteProd" method="POST">
+							<form action="/productos/deleteProd/<%= producto.id%>" method="POST">
 								<input type="submit" value="Eliminar producto">
 							</form>
 							<% } %>
