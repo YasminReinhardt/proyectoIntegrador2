@@ -16,7 +16,6 @@ const indexControl= {
           // res.send(data)
             res.render ('index', {
                 productos: data,
-                usuarioLogueado: false, // creo que va data.usuario 
             }
             )
         })

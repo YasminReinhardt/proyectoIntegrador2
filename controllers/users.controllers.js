@@ -56,36 +56,41 @@ const userControl ={
     },
     create: function(req,res){
         let {usuario,email,password,photo_url,birthdate,dni}=req.body
-        db.Usuarios.findOne({
-            where: {
-                email:email
-            }
-        })
-        .then(function(email_repetido){
-            if (email_repetido !== undefined){
+        if ((password== '') || (password.length < 4) || (email == '')){
+            let errors= {}
+            if (password ==''){
+                errors.message= "debes ingresar una contrasenia"
+            }else if (password.length <4){
+                errors.message= "debes ingresar una contrasenia con mas de 4 caracteres"
+            }else if(email == ''){
+                errors.message= "Debes ingresar un email."
+            } 
+            res.locals.errors=errors
+            res.render('register')
+
+        }else{
+            db.Usuarios.findOne({
+                where: {
+                    email:email
+                }
+            })
+       
+        .then(function(data){
+            if (data){
                 let errors = {}
                 errors.message = "Ya existe un usuario con ese email"
                 res.locals.errors=errors
                 res.render('register')
-            }
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-        if (
-            (password!== '') &&
-            (password.length > 4) &&
-            (email !== '')
-        ){
-            let passEncriptada = bcrypt.hashSync(password, 12);
-            db.Usuarios.create({
-                usuario: usuario,
-                email: email,
-                password: passEncriptada,
-                photo_url: photo_url,
-                birthdate:birthdate,
-                dni:dni,
-            })
+            }else{
+                let passEncriptada = bcrypt.hashSync(password, 12);
+                db.Usuarios.create({
+                    usuario: usuario,
+                    email: email,
+                    password: passEncriptada,
+                    photo_url: photo_url,
+                    birthdate:birthdate,
+                    dni:dni,
+                })
             .then (function(data){
                 res.redirect ("/users/login")
    
@@ -93,19 +98,14 @@ const userControl ={
             .catch(function(err){
                 console.log(err)
             })
-        } else {
-            let errors= {}
-            if (password==''){
-                errors.message= "debes ingresar una contrasenia"
-            }else if (password.length <4){
-                errors.message= "debes ingresar una contrasenia con mas de 4 caracteres"
-            }else if (email==''){
-                errors.message= "Debes ingresar un email."
-            } 
-            res.locals.errors=errors
-            res.render('register')
-        }
-       
+
+            }
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+            
+        } 
     }, 
     update: function (req,res){
         let id= req.params.id
@@ -155,9 +155,13 @@ const userControl ={
                         }
                          res.redirect ('/')
                         }else{
-                            res.send('clave erronea')
+                            let errors = {}
+                            errors.message = ('Clave incorrecta')
+                            res.locals.errors=errors
+                            return res.render('login')
                         } 
                     } else {
+                        let errors = {}
                         errors.message = ('No existe ese usuario')
                         res.locals.errors=errors
                         return res.render('login')

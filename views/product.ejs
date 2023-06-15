@@ -41,7 +41,6 @@
 							<img src=<%= producto.img_url%>" alt="" class="product-detail-img">
 							<p class="product-detail-description"><%= producto.descripcion%></p>
 						</article>
-						<% for( let i=0; i < 1; i++ ) { %>
 							<div class="col-12 col-lg-4">
 
 							   <section class="comments">
@@ -51,7 +50,7 @@
 									   <div class="data">
 										   <p class="user">
 											   <strong> 
-												   <a href="/users/profile/<%= producto.comentarios[index].usuarios.id %>">
+												   <a href="/users/profile/<%= producto.comentarios[index].usuarios_id %>">
 													   <%= producto.comentarios[index].usuarios.usuario %>
 												   </a> 
 											   </strong>
@@ -71,8 +70,7 @@
 									</form>
 
 								</section>
-							</div>		
-						<% } %>
+							</div>	
 
 								
 							

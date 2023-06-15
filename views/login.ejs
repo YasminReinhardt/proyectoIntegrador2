@@ -33,6 +33,9 @@
 				</button>
 			</form> 
 		</h2>
+		<% if (locals.errors){%>
+			<h2><%= errors.message%></h2>
+		<% }%>
 
             <p>
                 Aun no tienes cuenta?

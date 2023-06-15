@@ -158,16 +158,21 @@ const productosControl= {
         // db.Comentarios.destroy({
         //     where: {productos_id: req.body.id}
         // })
+        db.Comentarios.destroy(
+            {where: {productos_id:id}}
+        )
         db.Producto.findByPk(id)
         .then(function(data){
             db.Producto.destroy(
                 {where: {id:id}}
             )
             return res.redirect ('/')
+
         })
         .catch(function(err){
             console.log(err)
         }) 
+
     }, 
 } 
 ///const productosControl = {
