@@ -15,6 +15,9 @@ module.exports= function(sequelize, dataTypes) {
         descripcion: {
             type: dataTypes.TEXT
         },
+        usuario_id: {
+            type: dataTypes.INTEGER,
+        },
         img_url:{
             type: dataTypes.STRING
         }
@@ -26,10 +29,7 @@ module.exports= function(sequelize, dataTypes) {
         updated_at: {
             type:dataTypes.DATE,
             allowNull: true,
-        },
-        usuario_id: {
-            type: dataTypes.INTEGER,
-        },
+        }
 
     }
     let config= {

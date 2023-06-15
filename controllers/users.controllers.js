@@ -31,8 +31,9 @@ const userControl ={
         ]})
         .then (function(user){
             res.render ('profile', {
-            usuario : user
+            user : user
         })
+        console.log(data)
         })
         //Hay un prpbllme con la ruta
         .catch(function(err){
@@ -55,12 +56,27 @@ const userControl ={
     },
     create: function(req,res){
         let {usuario,email,password,photo_url,birthdate,dni}=req.body
+        db.Usuarios.findOne({
+            where: {
+                email:email
+            }
+        })
+        .then(function(email_repetido){
+            if (email_repetido !== undefined){
+                let errors = {}
+                errors.message = "Ya existe un usuario con ese email"
+                res.locals.errors=errors
+                res.render('register')
+            }
+        })
+        .catch(function(err){
+            console.log(err)
+        })
         if (
             (password!== '') &&
-            (password.length>4) &&
-            (email !== '')&&
-            (email !== req.locals.email)
-            ){
+            (password.length > 4) &&
+            (email !== '')
+        ){
             let passEncriptada = bcrypt.hashSync(password, 12);
             db.Usuarios.create({
                 usuario: usuario,
@@ -81,13 +97,11 @@ const userControl ={
             let errors= {}
             if (password==''){
                 errors.message= "debes ingresar una contrasenia"
-            }else if (password.length <3){
+            }else if (password.length <4){
                 errors.message= "debes ingresar una contrasenia con mas de 4 caracteres"
             }else if (email==''){
                 errors.message= "Debes ingresar un email."
-            } else {
-                errors.message= "Ese email ya fue utilizado"
-            }
+            } 
             res.locals.errors=errors
             res.render('register')
         }

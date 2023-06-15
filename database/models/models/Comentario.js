@@ -5,6 +5,12 @@ module.exports= function(sequelize, dataTypes) {
             autoIncrement: true,
             primaryKey:true, 
             type: dataTypes.INTEGER,
+        }, 
+        usuario_id: {
+            type:dataTypes.INTEGER,
+        }, 
+        productos_id: {
+            type: dataTypes.INTEGER
         },
         texto: {
             type: dataTypes.TEXT
@@ -17,13 +23,7 @@ module.exports= function(sequelize, dataTypes) {
         updated_at: {
             type:dataTypes.DATE,
             allowNull:true,
-            }, 
-        usuario_id: {
-            type:dataTypes.INTEGER,
-        }, 
-        productos_id: {
-            type: dataTypes.INTEGER
-        },
+            }
     }
     let config= {
         tableName: "comentarios", 

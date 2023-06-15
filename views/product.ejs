@@ -14,9 +14,6 @@
 				<div class="d-flex align-items-center">
 					<p class="products-title"><%= producto.nombre %></p>
 					<p class="product-detail-description">
-						<a href="/productos/productosAdd">Agregar un producto</a>
-					</p>
-					<p class="product-detail-description">
 						<a href="/users/profile/<%= producto.usuarios.id %>">
 							Usuario: <%= producto.usuarios.usuario %>
 						</a>
@@ -43,7 +40,7 @@
 									   <div class="data">
 										   <p class="user">
 											   <strong> 
-												   <a href="/users/profile/<%=producto.usuarios.id %>">
+												   <a href="/users/profile/<%= producto.comentarios[index].usuarios.id %>">
 													   <%= producto.comentarios[index].usuarios.usuario %>
 												   </a> 
 											   </strong>

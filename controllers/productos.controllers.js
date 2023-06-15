@@ -16,7 +16,7 @@ const productosControl= {
                 {
                     association: 'usuarios',
                     include:[
-                        {association: 'produ'}
+                        {association: 'productos'}
                     ] 
                 }           
              ],
@@ -26,7 +26,7 @@ const productosControl= {
             res.render('product', {
               producto:data,
             })
-           // res.send(data)
+            console.log(data)
          })
          .catch(function(err){
              console.log(err)
@@ -117,7 +117,7 @@ const productosControl= {
 
     },
     updateProd: function(req,res){
-        
+
     }
 } 
 ///const productosControl = {
