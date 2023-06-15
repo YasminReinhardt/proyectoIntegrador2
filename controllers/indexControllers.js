@@ -27,6 +27,8 @@ const indexControl= {
     },
     logout: function(req,res){
         req.session.user= undefined
+        req.session.destroy()
+        res.clearCookie('rememberUser')
         res.redirect('/')
     }
 }
