@@ -10,11 +10,12 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<h2 class="col-12"> 
-				<form action="/users/edit-profile/ <%= usuario.id  %>" method="POST">
+				<form action="/users/profile/<%= usuario.id  %>" method="POST">
 					<input name="usuario" value="<%= usuario.usuario%>">
 					<input name="email" value="<%= usuario.email %>">
 					<input name="birthdate" value="<%= usuario.birthdate %>">
 					<input name="dni" value="<%= usuario.dni %>">
+					<input name="password" type="password" placeholder="Ingrese su contrasenia">
 					<input type="submit" value="Guardar cambios realizados">
 
 				</form>

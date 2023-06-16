@@ -109,18 +109,38 @@ const userControl ={
     }, 
     update: function (req,res){
         let id= req.params.id
-        let {usuario,email}= req.body 
-        db.Usuarios.update({
-            usuario: usuario, 
-            email: email
-        }, {
-            where:{
-                id:id
+        let {usuario,email,birthdate,dni,password,passwordNueva}= req.body 
+        db.Usuarios.findByPk(id)
+        .then(function(data){
+            let comparacionPassword = bcrypt.compareSync(password, data.password)
+
+            if (comparacionPassword){
+                req.session.user={ 
+                    id: id, 
+                    usuario: usuario, 
+                    email: email
+                }
+                db.Usuarios.update({
+                    usuario: usuario, 
+                    email: email,
+                    birthdate:birthdate, 
+                    dni:dni, 
+                    passwordNueva:passwordNueva
+                }, {
+                    where:{
+                        id:id
+                    }
+                })
+                .then (function(data){
+                    res.redirect (`/users/profile/${id}`)
+                }) 
+            } else {
+                let errors = {}
+                errors.message= "debes ingresar una contrasenia"
+
             }
         })
-        .then (function(data){
-            res.redirect ('/users/profile/' + id)
-        })        
+       
         .catch(function(err){
             console.log(err)
         })

@@ -23,7 +23,7 @@ const productosControl= {
         })
         .then(function(data){
             res.render('product', {
-              producto:data,
+                producto : data,
             })
             console.log(data)
          })
@@ -75,12 +75,15 @@ const productosControl= {
 
         },
     create: function(req,res){
+        let {foto, nombre, descripcion} = req.body
+        let img_url = foto 
+        let usuario_id = req.session.user.id
     if (req.session.user){
         let creacion= {
-            img_url: req.body.foto, 
-            nombre: req.body.nombre, 
-            descripcion: req.body.descripcion,
-            usuario_id: req.session.user.id
+         img_url,
+         nombre,
+         descripcion,
+         usuario_id
         }
         db.Producto.create(creacion)
             return res.redirect ('/')

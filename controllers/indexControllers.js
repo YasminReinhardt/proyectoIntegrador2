@@ -9,20 +9,14 @@ const indexControl= {
                         include:[{association: 'usuarios'}
                         ]},{association: 'usuarios'}], 
                 order: [['created_at', 'DESC']],
-
             })
         .then(function(data){
-            console.log(data)
-          // res.send(data)
             res.render ('index', {
                 productos: data,
-            }
-            )
+            })
         })
         .catch(function(err)
             {console.log(err)})
-
-
     },
     logout: function(req,res){
         req.session.user= undefined

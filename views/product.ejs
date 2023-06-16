@@ -38,7 +38,7 @@
 				<div class="product-detail">
 					<div class="row">
 						<article class="col-12 col-lg-8 product-detail-info">
-							<img src=<%= producto.img_url%>" alt="" class="product-detail-img">
+							<img src= <%= producto.img_url %> alt="" class="product-detail-img">
 							<p class="product-detail-description"><%= producto.descripcion%></p>
 						</article>
 							<div class="col-12 col-lg-4">
@@ -50,7 +50,7 @@
 									   <div class="data">
 										   <p class="user">
 											   <strong> 
-												   <a href="/users/profile/<%= producto.comentarios[index].usuarios_id %>">
+												   <a href="/users/profile/<%= producto.comentarios[index].usuarios.id %>">
 													   <%= producto.comentarios[index].usuarios.usuario %>
 												   </a> 
 											   </strong>

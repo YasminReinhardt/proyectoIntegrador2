@@ -14,8 +14,8 @@ router.post('/profile/:id?', userControl.update)
 
 router.post ('/delete/:id',userControl.delete)
 
-router.get ('/edit-profile/:id', userControl.edit)
-router.post ('/edit-profle/:id',  userControl.update)
+router.get ('/edit-profile/:id?', userControl.edit)
+// router.post ('/edit-profle',  userControl.updateProfile)
 
 
 
