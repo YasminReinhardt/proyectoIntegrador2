@@ -28,8 +28,8 @@ module.exports= function(sequelize, dataTypes) {
         },
         updated_at: {
             type:dataTypes.DATE,
-            allowNull: true,
-        }
+            allowNull:true,
+        }
 
     }
     let config= {

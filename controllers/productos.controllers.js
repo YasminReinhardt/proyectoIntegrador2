@@ -6,6 +6,7 @@ const productosControl= {
     productos:function (req,res){
         let id= req.params.id
         db.Producto.findByPk(id, {
+            order: [["comentarios","created_at","DESC"]],
             include: [
                 {
                     association: 'comentarios',

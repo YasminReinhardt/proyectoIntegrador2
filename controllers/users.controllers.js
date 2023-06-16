@@ -20,7 +20,9 @@ const userControl ={
     profile: function (req,res){
         // let id = req.session.user.id
         let id = req.params.id
-        db.Usuarios.findByPk(id, {include:
+        db.Usuarios.findByPk(id, {
+            order: [["productos","created_at", "DESC"]],
+            include:
             [
             {
                 association: 'productos', 
@@ -109,7 +111,7 @@ const userControl ={
     }, 
     update: function (req,res){
         let id= req.params.id
-        let {usuario,email,birthdate,dni,password,passwordNueva}= req.body 
+        let {usuario,email,birthdate,dni,password,img_url}= req.body 
         db.Usuarios.findByPk(id)
         .then(function(data){
             let comparacionPassword = bcrypt.compareSync(password, data.password)
@@ -125,7 +127,7 @@ const userControl ={
                     email: email,
                     birthdate:birthdate, 
                     dni:dni, 
-                    passwordNueva:passwordNueva
+                    img_url:img_url
                 }, {
                     where:{
                         id:id
